@@ -9,7 +9,10 @@ export default {
     extend: {
       fontFamily: {
         'satoshi': ['Satoshi', 'sans-serif'],
-      }
+      },
+      colors: {
+        krutNeon: "#00D4EF",
+      },
     }
   },
   plugins: [],
