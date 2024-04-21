@@ -7,22 +7,24 @@ import ToolsCard from "../../Components/ToolsCard/ToolsCard";
 import dicordVector from "../../assets/Images/discord_vector.png";
 import { Link } from "react-router-dom";
 
+
+
 const Home = () => {
   return (
     <>
       {/* First Section */}
       <div
-        className="bg-cover bg-no-repeat bg-center min-h-screen"
+        className="bg-cover bg-no-repeat bg-center min-h-screen "
         style={{ backgroundImage: `url(${Comp2Gif})` }} 
       >
         <Header />
-        <div className="sec-one-title text-center py-10 2xl:py-40 xl:py-20 flex flex-col justify-center items-center">
+        <div className="text-center py-10 2xl:py-40 xl:py-20 flex flex-col justify-center items-center">
           <div className="leading-tight ">
-            <h1 className="text-white text-8xl 2xl:text-[9rem] font-bold">
-              Design Your <span className="text-cyan-400">Ideas</span>
+            <h1 className="text-white text:5xl lg:text-7xl  xl:text-8xl 2xl:text-[9rem] font-bold">
+              Design Your <span className="text-krutNeon">Ideas</span>
             </h1>
-            <h1 className="text-white text-8xl 2xl:text-[9rem] font-bold">
-              Into <span className="text-cyan-400">Visuals</span>
+            <h1 className="text-white text:5xl lg:text-7xl xl:text-8xl 2xl:text-[9rem] font-bold">
+              Into <span className="text-krutNeon">Visuals</span>
             </h1>
           </div>
 
@@ -40,11 +42,13 @@ const Home = () => {
             </ul>
           </div>
 
-          <div className="sec-one-button border border-cyan-400 text-white rounded-full px-20 py-2 mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 text-2xl 2xl:text-4xl font-bold">
+          <div className="sec-one-button border border-krutNeon text-white rounded-full lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold">
             Try Krut AI
           </div>
         </div>
       </div>
+
+
 
       {/* Second Section */}
       <div class=" min-h-[27rem] flex justify-center items-center">
@@ -64,13 +68,13 @@ const Home = () => {
         style={{ backgroundImage: `url(${bgVector})` }}
       >
         <div className=" text-center pt-40">
-          <h1 className="text-cyan-300 text-6xl font-bold leading-tight">
+          <h1 className="text-krutNeon text-6xl font-bold leading-tight">
             AI Creative Suite{" "}
             <span className="text-white text-6xl font-bold leading-tight">
               For Your
             </span>
           </h1>
-          <h1 className="text-cyan-300 text-6xl font-bold leading-tight">
+          <h1 className="text-krutNeon text-6xl font-bold leading-tight">
             Creative Ideas
           </h1>
         </div>
@@ -86,7 +90,7 @@ const Home = () => {
 
       {/* <div className="min-h-screen bg-cover bg-no-repeat bg-center py-10" style={{ backgroundImage: `url(${bgVector})` }}>
 
-     <div className="border border-cyan-400 text-white rounded-full mx-[15rem] flex flex-col  justify-center items-center">
+     <div className="border border-krutNeon text-white rounded-full mx-[15rem] flex flex-col  justify-center items-center">
         <h1 className="text-center font-semibold text-5xl">Our Trusted Partners</h1>  
         <div className="flex gap-10">
          
@@ -115,22 +119,22 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Price Section */}
+      {/* Price Section
       <div
         className="min-h-[100vh] bg-center bg-cover bg-no-repeat "
         style={{ backgroundImage: `url(${bgVector})` }}
       >
         <div className="text-center">
           <h1 className="text-white text-7xl font-bold leading-tight">
-            The <span className="text-cyan-400">Ideal Plans</span> At The
+            The <span className="text-krutNeon">Ideal Plans</span> At The
           </h1>
-          <h1 className="text-cyan-400 text-7xl font-bold leading-tight">
+          <h1 className="text-krutNeon text-7xl font-bold leading-tight">
             Ideal Price
           </h1>
         </div>
         <div className="px-60 mt-8 price-cards  ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8">
-            <div className="  border-2 border-cyan-400 text-white rounded-[2.5rem]">
+            <div className="  border-2 border-krutNeon text-white rounded-[2.5rem]">
               <div className="p-5">
               <h1 className="font-semibold text-3xl mb-4">Free</h1>
               <p className=" text-sm mb-4">For anyone who wants to try image generation</p>
@@ -150,7 +154,7 @@ const Home = () => {
                   
               </div>
             </div>
-            <div className="border-2 border-cyan-400 text-white rounded-[2.5rem] h-full" >
+            <div className="border-2 border-krutNeon text-white rounded-[2.5rem] h-full" >
               <div className="p-5">
               <h1 className="font-semibold text-3xl mb-4">Plus</h1>
               <p className=" text-sm mb-4 ">Meet your goals and accomplish more with Advanced AI features.</p>
@@ -170,13 +174,13 @@ const Home = () => {
                   
               </div>
             </div>
-            <div className="border-2 border-cyan-400 text-white rounded-[2.5rem] h-full">
+            <div className="border-2 border-krutNeon text-white rounded-[2.5rem] h-full">
               <div className="p-5">
               <h1 className="font-semibold text-3xl mb-4">Pro</h1>
               <p className="text-sm mb-4">Collaborate in teams of all scale your brand with better ROI</p>
               <h1 className="font-semibold text-2xl mb-4">$50/month*</h1>
               <div className="flex items-center justify-center">
-              <button className="bg-gradient-to-b  from-cyan-400 via-cyan-400 to-gray-600 text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5">Be a Pro</button>
+              <button className="bg-gradient-to-b  from-krutNeon via-krutNeon to-gray-600 text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5">Be a Pro</button>
               </div>
               </div>
               <div className=" bg-white  text-gray-500 text-sm leading-loose font-medium rounded-t-[1.5rem] rounded-b-[2.5rem] px-5 py-5 tracking-tight">
@@ -193,13 +197,13 @@ const Home = () => {
           
         </div>
         <div className="flex items-center justify-center text-white mt-10 mb-2">
-             <div className="border-2 border-cyan-500 rounded-[2rem] w-1/4 py-2 mx-10 text-xl font-semibold  flex justify-center px-10">
+             <div className="border-2 border-krutNeon rounded-[2rem] w-1/4 py-2 mx-10 text-xl font-semibold  flex justify-center px-10">
              Compare More 
              </div>
               
              
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
