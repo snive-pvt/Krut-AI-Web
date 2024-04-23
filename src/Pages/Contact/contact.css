@@ -1,0 +1,7 @@
+input::placeholder {
+    /* Specify your placeholder styles */
+    color: #A5A5A5; /* Gray color for the placeholder text */
+    font-size: 0.75rem; /* Small font size */
+    font-weight: 300; /* Light font weight */
+    padding-left: .5rem;
+  }
