@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../Components/Header/Header'
 import "./pricing.css"
 import Footer from '../../Components/Footer/Footer'
-import { comparisonTable, pricingTable } from '../../assets/pricingTable'
+import { comparisonTable, comparisonTableDemo, pricingTable } from '../../assets/pricingTable'
+import GetStarted from '../../Components/GetStarted/GetStarted'
 
 function Pricing() {
     const linearGreenBackground = {
@@ -22,6 +23,28 @@ function Pricing() {
     const [plusMultiplier, setPlusMultiplier] = useState(1);  //multiplier for no of users _ plus
     const [proMultiplier, setProMultiplier] = useState(1);  //multiplier for no of users _ pro
     const [isMonthly, setIsMonthly] = useState(false);  //boolean for monthly or yearly
+    const [isPricingExpanded, setIsPricingExpanded] = useState(false); 
+    const [PricingDetails, setPricingDetails] = useState(comparisonTableDemo); 
+
+    function setPricingExpandView(){
+        isPricingExpanded? setIsPricingExpanded(false) : setIsPricingExpanded(true);
+        if(isPricingExpanded){
+            const PriceListElement = document.getElementById('CompareChart');
+            if (PriceListElement) {
+                PriceListElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+
+    useEffect(() => {
+        if(isPricingExpanded){
+            setPricingDetails(comparisonTable);
+        }else{
+            setPricingDetails(comparisonTableDemo);
+        }
+    }, [isPricingExpanded]);
+    
+    
 
     return (
         <>
@@ -150,7 +173,7 @@ function Pricing() {
                     </div>
                 </div>
 
-             
+
                 {/* ======== Mini Pricing Cards ========= */}
                 <div className="w-full scroll-mt-20" id='CompareChart'>
                     <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-evenly">
@@ -236,14 +259,15 @@ function Pricing() {
                             </tr>
                         </thead>
                         <tbody>
-                            {Object.keys(comparisonTable[0]).map((key, index) => {
+                            {Object.keys(PricingDetails[0]).map((key, index) => {
                                 if (key !== "title") {
                                     return (
                                         <tr key={index} className="border-b border-gray-400">
                                             <td className="py-3">{key}</td>
-                                            <td className="py-3">{comparisonTable[0][key]}</td>
-                                            <td className="py-3">{comparisonTable[1][key]}</td>
-                                            <td className="py-3">{comparisonTable[2][key]}</td>
+                                            <td className="py-3">{PricingDetails[0][key]}</td>
+                                            <td className="py-3">{PricingDetails[1][key]}</td>
+                                            <td className="py-3">{PricingDetails[2][key]}</td>
+
                                         </tr>
                                     );
                                 }
@@ -251,11 +275,22 @@ function Pricing() {
                             })}
                         </tbody>
                     </table>
-
+                </div>
+                <div className="w-full flex justify-center relative -mt-6">
+                    <button className='bg-white rounded-full border h-12 w-12 flex justify-center items-center' 
+                    onClick={setPricingExpandView}
+                    >
+                        <span class={`material-symbols-outlined ${isPricingExpanded? "rotate-180":""}`}>  expand_more </span>
+                    </button>
                 </div>
 
+                <br />
 
+                {/* ==============  FAQ  ============ */}
 
+               
+               
+                <GetStarted />
                 <Footer />
 
             </div>
