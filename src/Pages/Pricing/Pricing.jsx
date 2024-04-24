@@ -6,6 +6,12 @@ import { comparisonTable, comparisonTableDemo, pricingTable } from '../../assets
 import GetStarted from '../../Components/GetStarted/GetStarted'
 
 function Pricing() {
+    const [plusMultiplier, setPlusMultiplier] = useState(1);  //multiplier for no of users _ plus
+    const [proMultiplier, setProMultiplier] = useState(1);  //multiplier for no of users _ pro
+    const [isMonthly, setIsMonthly] = useState(false);  //boolean for monthly or yearly
+    const [isPricingExpanded, setIsPricingExpanded] = useState(false);
+    const [PricingDetails, setPricingDetails] = useState(comparisonTableDemo);
+
     const linearGreenBackground = {
         backgroundColor: 'black',
         backgroundImage: `url("/images/Green_shade.png")`,
@@ -13,38 +19,62 @@ function Pricing() {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
     }
-    const talkToUsBackground = {
+
+    const [talkToUsBackground, setTalkToUsBackground] = useState({
         backgroundColor: 'black',
         backgroundImage: `url("/images/pricingPageBanner.png")`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-    }
-    const [plusMultiplier, setPlusMultiplier] = useState(1);  //multiplier for no of users _ plus
-    const [proMultiplier, setProMultiplier] = useState(1);  //multiplier for no of users _ pro
-    const [isMonthly, setIsMonthly] = useState(false);  //boolean for monthly or yearly
-    const [isPricingExpanded, setIsPricingExpanded] = useState(false); 
-    const [PricingDetails, setPricingDetails] = useState(comparisonTableDemo); 
+    });
 
-    function setPricingExpandView(){
-        isPricingExpanded? setIsPricingExpanded(false) : setIsPricingExpanded(true);
-        if(isPricingExpanded){
+
+    useEffect(() => {
+        // Function to update the background image URL based on screen size
+        const handleResize = () => {
+            if (window.innerWidth >= 768) { // Assuming lg breakpoint is 768px
+                setTalkToUsBackground({
+                    ...talkToUsBackground,
+                    backgroundImage: `url("/images/pricingPageBannerLg.png")`,
+                });
+            } else {
+                setTalkToUsBackground({
+                    ...talkToUsBackground,
+                    backgroundImage: `url("/images/pricingPageBanner.png")`,
+                });
+            }
+        };
+
+        // Call handleResize initially and on window resize
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+
+
+    useEffect(() => {
+        if (isPricingExpanded) {
+            setPricingDetails(comparisonTable);
+        } else {
+            setPricingDetails(comparisonTableDemo);
+        }
+    }, [isPricingExpanded]);
+
+
+    function setPricingExpandView() {
+        isPricingExpanded ? setIsPricingExpanded(false) : setIsPricingExpanded(true);
+        if (isPricingExpanded) {
             const PriceListElement = document.getElementById('CompareChart');
             if (PriceListElement) {
                 PriceListElement.scrollIntoView({ behavior: 'smooth' });
             }
         }
     }
-
-    useEffect(() => {
-        if(isPricingExpanded){
-            setPricingDetails(comparisonTable);
-        }else{
-            setPricingDetails(comparisonTableDemo);
-        }
-    }, [isPricingExpanded]);
-    
-    
 
     return (
         <>
@@ -73,8 +103,19 @@ function Pricing() {
                 <div className="w-full">
                     <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-evenly">
                         {pricingTable && pricingTable.map((list, index) =>
+
                             <div key={index} className="border-2 border-krutNeon border-opacity-40 text-white rounded-3xl h-full mx-8 sm:mx-4 xl:mx-8 max-w-[468px] mt-14 sm:my-5" >
-                                <div className="p-7 w-full">
+
+                                {/* Best value Ribbon */}
+                                <div className={`flex w-full justify-end relative mt-5 ms-9 ${list?.title !== "Pro" ? "opacity-0" : ""}`}>
+                                    <div className="text-white text-center p-1 w-36"
+                                        style={{ transform: 'rotate(45deg)', background: 'linear-gradient(76.49deg, #FFFFFF -13.8%, #D155E0 1.49%, #00979F 51.08%)', 
+                                        clipPath: 'polygon(21% 0, 78% 0, 100% 100%, 0% 100%)' }}>
+                                        <span className='text-bold'>Best Value</span>
+                                    </div>
+                                </div>
+
+                                <div className="p-7 pt-0 w-full">
                                     <h1 className="font-semibold text-3xl sm:text-4xl lg:5xl  mb-4">{list?.title}</h1>
                                     <p className="text-sm sm:text-base font-light mb-4 text-wrap">{list?.description}</p>
                                     <h1 className="font-semibold text-2xl sm:text-3xl lg:4-xl mb-4">${(list?.title !== "Plus" ? plusMultiplier : proMultiplier) * (isMonthly ? list?.priceMonthly : list?.priceYearly)}/month*</h1>
@@ -84,6 +125,19 @@ function Pricing() {
                                     <div className="h-16 mb-3">
                                         <div className="flex items-center justify-center h-full relative">
                                             {list?.title !== "Free" && <div className="w-[75%]">
+
+                                                {/* Multiplier value */}
+                                                <div className="absolute z-50"
+                                                    style={{
+                                                        marginLeft: `${(((list?.title !== "Plus" ? plusMultiplier : proMultiplier) - 1) * (72.5 / 11)) + 4.5}%`
+                                                    }}  >
+                                                    <div className="flex" >
+                                                        <span className="multiplier-value relative text-black text-lg font-semibold w-[30px] h-[30px] mt-2" >
+                                                            {(list?.title !== "Plus" ? plusMultiplier : proMultiplier)}x
+                                                        </span>
+                                                    </div>
+                                                </div>
+
                                                 {/* slider */}
                                                 <input type="range" id={`Multiplier_${index}`} name={`Multiplier_${index}`} list="markers" min="1" max="10"
                                                     className="w-full accent-white border-gray-300 cursor-ew-resize relative h-[50px]"
@@ -104,12 +158,6 @@ function Pricing() {
                                                     }}
                                                 />
 
-                                                {/* Multiplier value */}
-                                                <div className="flex w-[100%]">
-                                                    <span className="multiplier-value relative top-0 left-0 transform -translate-y-1/2 text-white text-sm font-medium" style={{ marginLeft: `${(((list?.title !== "Plus" ? plusMultiplier : proMultiplier)) - 1) * 100 / 11}%` }}>
-                                                        {(list?.title !== "Plus" ? plusMultiplier : proMultiplier)}x
-                                                    </span>
-                                                </div>
                                                 <div className="text-center">
                                                     <p className='text-sm'>More Than 10 Users? <span className='text-krutNeon'>
                                                         Contact<span className='text-transparent text-xs'>.</span>Us</span>
@@ -179,6 +227,16 @@ function Pricing() {
                     <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-evenly">
                         {pricingTable && pricingTable.map((list, index) =>
                             <div key={index} className="border-2 border-krutNeon border-opacity-40 text-white rounded-3xl h-full mx-8 sm:mx-4 xl:mx-8 max-w-[468px] mt-14 sm:my-5" >
+                               
+                                {/* Best value Ribbon */}
+                                <div className={`flex w-full justify-end relative mt-5 ms-9 ${list?.title !== "Pro" ? "opacity-0" : ""}`}>
+                                    <div className="text-white text-center p-1 w-36"
+                                        style={{ transform: 'rotate(45deg)', background: 'linear-gradient(76.49deg, #FFFFFF -13.8%, #D155E0 1.49%, #00979F 51.08%)', 
+                                        clipPath: 'polygon(21% 0, 78% 0, 100% 100%, 0% 100%)' }}>
+                                        <span className='text-bold'>Best Value</span>
+                                    </div>
+                                </div>
+                               
                                 <div className="p-7 w-full">
                                     <h1 className="font-semibold text-3xl sm:text-4xl lg:5xl  mb-4">{list?.title}</h1>
                                     <p className="text-sm sm:text-base font-light mb-4 text-wrap">{list?.description}</p>
@@ -189,6 +247,19 @@ function Pricing() {
                                     <div className="h-16 mb-3">
                                         <div className="flex items-center justify-center h-full relative">
                                             {list?.title !== "Free" && <div className="w-[75%]">
+
+                                                {/* Multiplier value */}
+                                                <div className="absolute z-50"
+                                                    style={{
+                                                        marginLeft: `${(((list?.title !== "Plus" ? plusMultiplier : proMultiplier) - 1) * (72.5 / 11)) + 4.5}%`
+                                                    }}  >
+                                                    <div className="flex" >
+                                                        <span className="multiplier-value relative text-black text-lg font-semibold w-[30px] h-[30px] mt-2" >
+                                                            {(list?.title !== "Plus" ? plusMultiplier : proMultiplier)}x
+                                                        </span>
+                                                    </div>
+                                                </div>
+
                                                 {/* slider */}
                                                 <input type="range" id={`Multiplier_${index}`} name={`Multiplier_${index}`} list="markers" min="1" max="10"
                                                     className="w-full accent-white border-gray-300 cursor-ew-resize relative h-[50px]"
@@ -209,12 +280,6 @@ function Pricing() {
                                                     }}
                                                 />
 
-                                                {/* Multiplier value */}
-                                                <div className="flex w-[100%]">
-                                                    <span className="multiplier-value relative top-0 left-0 transform -translate-y-1/2 text-white text-sm font-medium" style={{ marginLeft: `${(((list?.title !== "Plus" ? plusMultiplier : proMultiplier)) - 1) * 100 / 11}%` }}>
-                                                        {(list?.title !== "Plus" ? plusMultiplier : proMultiplier)}x
-                                                    </span>
-                                                </div>
                                                 <div className="text-center">
                                                     <p className='text-sm'>More Than 10 Users? <span className='text-krutNeon'>
                                                         Contact<span className='text-transparent text-xs'>.</span>Us</span>
@@ -248,8 +313,8 @@ function Pricing() {
 
 
                 {/* ======== Price comparison Table ========= */}
-                <div className="rounded-3xl bg-white mx-8 sm:mx-4 xl:mx-8 mt-10 p-10">
-                    <table className="w-full text-start text-sm">
+                <div className="rounded-3xl bg-white mx-8  lg:mx-16 2xl:mx-24 mt-10 p-10 overflow-x-scroll md:overflow-hidden">
+                    <table className="w-full text-start text-sm lg:text-base">
                         <thead>
                             <tr className="border-b border-gray-400">
                                 <th className="py-3"></th>
@@ -264,9 +329,47 @@ function Pricing() {
                                     return (
                                         <tr key={index} className="border-b border-gray-400">
                                             <td className="py-3">{key}</td>
-                                            <td className="py-3">{PricingDetails[0][key]}</td>
-                                            <td className="py-3">{PricingDetails[1][key]}</td>
-                                            <td className="py-3">{PricingDetails[2][key]}</td>
+                                            <td className="py-3">
+                                                <div className="flex items-center">
+                                                    <span class={`material-symbols-outlined pe-1 md:block
+                                                    ${(key === "Availability" || key === "Contact Method") ||
+                                                            (key === "Number of Downloads (per month)" || key === "Download Format") ? "hidden" : ""} `}>
+                                                        {PricingDetails[0][key] === "Not Included" ? "close" : "done"}
+                                                    </span>
+                                                    <span className={`${(key === "Availability" || key === "Contact Method") ||
+                                                        (key === "Number of Downloads (per month)" || key === "Download Format") ? "" : "hidden"} md:block`}>
+                                                        {PricingDetails[0][key]}
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td className="py-3">
+                                                <div className="flex items-center">
+                                                    <span class={`material-symbols-outlined pe-1 md:block 
+                                                    ${(key === "Availability" || key === "Contact Method") ||
+                                                            (key === "Number of Downloads (per month)" || key === "Download Format") ? "hidden" : ""}  `}>
+                                                        {PricingDetails[1][key] === "Not Included" ? "close" : "done"}
+                                                    </span>
+                                                    <span className={`${(key === "Availability" || key === "Contact Method") ||
+                                                        (key === "Number of Downloads (per month)" || key === "Download Format") ? "" : "hidden"} md:block`}>
+                                                        {PricingDetails[1][key]}
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td className="py-3">
+                                                <div className="flex items-center">
+                                                    <span class={`material-symbols-outlined pe-1 md:block 
+                                                    ${(key === "Availability" || key === "Contact Method") ||
+                                                            (key === "Number of Downloads (per month)" || key === "Download Format") ? "hidden" : ""}  `}>
+                                                        {PricingDetails[2][key] === "Not Included" ? "close" : "done"}
+                                                    </span>
+                                                    <span className={`${(key === "Availability" || key === "Contact Method") ||
+                                                        (key === "Number of Downloads (per month)" || key === "Download Format") ? "" : "hidden"} md:block`}>
+                                                        {PricingDetails[2][key]}
+                                                    </span>
+                                                </div>
+                                            </td>
 
                                         </tr>
                                     );
@@ -277,10 +380,10 @@ function Pricing() {
                     </table>
                 </div>
                 <div className="w-full flex justify-center relative -mt-6">
-                    <button className='bg-white rounded-full border h-12 w-12 flex justify-center items-center' 
-                    onClick={setPricingExpandView}
+                    <button className='bg-white rounded-full border h-12 w-12 flex justify-center items-center'
+                        onClick={setPricingExpandView}
                     >
-                        <span class={`material-symbols-outlined ${isPricingExpanded? "rotate-180":""}`}>  expand_more </span>
+                        <span class={`material-symbols-outlined ${isPricingExpanded ? "rotate-180" : ""}`}>  expand_more </span>
                     </button>
                 </div>
 
@@ -288,8 +391,8 @@ function Pricing() {
 
                 {/* ==============  FAQ  ============ */}
 
-               
-               
+
+
                 <GetStarted />
                 <Footer />
 
