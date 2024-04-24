@@ -79,7 +79,7 @@ function Pricing() {
     return (
         <>
             <div className='min-h-screen'>
-                {/* <Header /> */}
+                <Header />
                 <div className="h-[624px] w-full absolute top-0 -z-50" style={linearGreenBackground}></div>
 
                 <div className="flex items-center justify-center w-full py-10">
@@ -109,8 +109,10 @@ function Pricing() {
                                 {/* Best value Ribbon */}
                                 <div className={`flex w-full justify-end relative mt-5 ms-9 ${list?.title !== "Pro" ? "opacity-0" : ""}`}>
                                     <div className="text-white text-center p-1 w-36"
-                                        style={{ transform: 'rotate(45deg)', background: 'linear-gradient(76.49deg, #FFFFFF -13.8%, #D155E0 1.49%, #00979F 51.08%)', 
-                                        clipPath: 'polygon(21% 0, 78% 0, 100% 100%, 0% 100%)' }}>
+                                        style={{
+                                            transform: 'rotate(45deg)', background: 'linear-gradient(76.49deg, #FFFFFF -13.8%, #D155E0 1.49%, #00979F 51.08%)',
+                                            clipPath: 'polygon(21% 0, 78% 0, 100% 100%, 0% 100%)'
+                                        }}>
                                         <span className='text-bold'>Best Value</span>
                                     </div>
                                 </div>
@@ -221,22 +223,25 @@ function Pricing() {
                     </div>
                 </div>
 
+                <div id='CompareChart' className='scroll-mt-10'></div>
 
                 {/* ======== Mini Pricing Cards ========= */}
-                <div className="w-full scroll-mt-20" id='CompareChart'>
+                <div className="w-full hidden lg:block" >
                     <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-evenly">
                         {pricingTable && pricingTable.map((list, index) =>
                             <div key={index} className="border-2 border-krutNeon border-opacity-40 text-white rounded-3xl h-full mx-8 sm:mx-4 xl:mx-8 max-w-[468px] mt-14 sm:my-5" >
-                               
+
                                 {/* Best value Ribbon */}
                                 <div className={`flex w-full justify-end relative mt-5 ms-9 ${list?.title !== "Pro" ? "opacity-0" : ""}`}>
                                     <div className="text-white text-center p-1 w-36"
-                                        style={{ transform: 'rotate(45deg)', background: 'linear-gradient(76.49deg, #FFFFFF -13.8%, #D155E0 1.49%, #00979F 51.08%)', 
-                                        clipPath: 'polygon(21% 0, 78% 0, 100% 100%, 0% 100%)' }}>
+                                        style={{
+                                            transform: 'rotate(45deg)', background: 'linear-gradient(76.49deg, #FFFFFF -13.8%, #D155E0 1.49%, #00979F 51.08%)',
+                                            clipPath: 'polygon(21% 0, 78% 0, 100% 100%, 0% 100%)'
+                                        }}>
                                         <span className='text-bold'>Best Value</span>
                                     </div>
                                 </div>
-                               
+
                                 <div className="p-7 w-full">
                                     <h1 className="font-semibold text-3xl sm:text-4xl lg:5xl  mb-4">{list?.title}</h1>
                                     <p className="text-sm sm:text-base font-light mb-4 text-wrap">{list?.description}</p>
@@ -331,7 +336,7 @@ function Pricing() {
                                             <td className="py-3">{key}</td>
                                             <td className="py-3">
                                                 <div className="flex items-center">
-                                                    <span class={`material-symbols-outlined pe-1 md:block
+                                                    <span className={`material-symbols-outlined pe-1 md:block
                                                     ${(key === "Availability" || key === "Contact Method") ||
                                                             (key === "Number of Downloads (per month)" || key === "Download Format") ? "hidden" : ""} `}>
                                                         {PricingDetails[0][key] === "Not Included" ? "close" : "done"}
@@ -345,7 +350,7 @@ function Pricing() {
 
                                             <td className="py-3">
                                                 <div className="flex items-center">
-                                                    <span class={`material-symbols-outlined pe-1 md:block 
+                                                    <span className={`material-symbols-outlined pe-1 md:block 
                                                     ${(key === "Availability" || key === "Contact Method") ||
                                                             (key === "Number of Downloads (per month)" || key === "Download Format") ? "hidden" : ""}  `}>
                                                         {PricingDetails[1][key] === "Not Included" ? "close" : "done"}
@@ -359,7 +364,7 @@ function Pricing() {
 
                                             <td className="py-3">
                                                 <div className="flex items-center">
-                                                    <span class={`material-symbols-outlined pe-1 md:block 
+                                                    <span className={`material-symbols-outlined pe-1 md:block 
                                                     ${(key === "Availability" || key === "Contact Method") ||
                                                             (key === "Number of Downloads (per month)" || key === "Download Format") ? "hidden" : ""}  `}>
                                                         {PricingDetails[2][key] === "Not Included" ? "close" : "done"}
@@ -383,7 +388,7 @@ function Pricing() {
                     <button className='bg-white rounded-full border h-12 w-12 flex justify-center items-center'
                         onClick={setPricingExpandView}
                     >
-                        <span class={`material-symbols-outlined ${isPricingExpanded ? "rotate-180" : ""}`}>  expand_more </span>
+                        <span className={`material-symbols-outlined ${isPricingExpanded ? "rotate-180" : ""}`}>  expand_more </span>
                     </button>
                 </div>
 

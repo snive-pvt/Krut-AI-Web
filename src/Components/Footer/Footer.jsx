@@ -14,7 +14,7 @@ function Footer() {
                             <div className="flex">
                                 <input className='w-[70%] bg-transparent border border-white rounded px-3 py-0.5' type="text" placeholder='Email' />
                                 <button className='ms-5 sm:ms-10 border border-white w-8 h-8 rounded-full flex justify-center items-center'>
-                                    <span class="material-symbols-outlined text-lg">
+                                    <span className="material-symbols-outlined text-lg">
                                         arrow_forward
                                     </span>
                                 </button>
@@ -74,7 +74,7 @@ function Footer() {
                 {/* social links */}
                 <div className="py-5 w-full px-3 ">
                     <div className="flex justify-center items-center">
-                        <div className="flex space-x-16 md:space-x-5">
+                        <div className="flex space-x-12 md:space-x-5">
                             <a href="http://discord.com" target="_blank">
                                 <img className='h-8' src="/icons/discord.png" alt="discord" />
                             </a>
