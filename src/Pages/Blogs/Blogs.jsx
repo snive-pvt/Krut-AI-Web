@@ -25,11 +25,10 @@ const Blogs = () => {
 
         <div className="my-10 2xl:my-16">
           <h1 className="text-white text-3xl sm:text-4xl xl:text-7xl 2xl:text-8xl text-center font-bold">
-            Useful Articles
+            Blogs
           </h1>
           <p className="mt-8 mx-2 sm:mx-4 text-xl text-center xl:text-xs 2xl:text-lg 2xl:font-normal text-white xl:font-light">
-            Instantly scale ANY image to 4K clarity with a click using AI
-            precision
+            Get Valuable insights,practical tips,and thought-provoking analyses to keep you informed and inspired.
           </p>
 
           <div className="min-h-[220px] md:min-h-[240px] xl:min-h-[340px] 2xl:min-h-[440px] xl:mx-20 2xl:mx-40 border border-krutNeon rounded-2xl 2xl:rounded-3xl mx-4 md:mx-12 mt-16 mb-4 flex">
@@ -56,23 +55,7 @@ const Blogs = () => {
 
           </div>
 
-          <div className="mx-8 md:mx-20 xl:mx-56 2xl:mx-60 sm:mx-12 lg:mt-12 flex justify-between lg:gap-5 ">
-          <button className="hidden lg:block border 2xl:border-4 lg:border-2 border-krutNeon text-white text-[10px] lg:text-xl 2xl:text-2xl lg:font-medium sm:text-sm rounded-full lg:rounded-full px-2 2xl:px-8  lg:px-4 py-1  ">
-                Design
-              </button>
-          <button className="border lg:border-2 2xl:border-4 border-krutNeon text-white text-[10px] lg:text-xl 2xl:text-2xl lg:font-medium sm:text-sm rounded-lg lg:rounded-full px-2 2xl:px-8 lg:px-4 py-1  ">
-                Read more
-              </button>
-              <button className="border lg:border-2 2xl:border-4 border-krutNeon text-white text-[10px] lg:text-xl 2xl:text-2xl lg:font-medium sm:text-sm rounded-lg lg:rounded-full px-2 lg:px-4 2xl:px-8 py-1  ">
-                Read more
-              </button>
-              <button className="border lg:border-2 2xl:border-4 border-krutNeon text-white text-[10px] lg:text-xl 2xl:text-2xl lg:font-medium sm:text-sm rounded-lg lg:rounded-full px-2 lg:px-4 2xl:px-8  py-1  ">
-                Read more
-              </button>
-              <button className="border lg:border-2 2xl:border-4 border-krutNeon text-white text-[10px] lg:text-xl  2xl:text-2xl lg:font-medium sm:text-sm rounded-lg lg:rounded-full px-2 lg:px-4 2xl:px-8  py-1  ">
-                Read more
-              </button>
-          </div>
+         
         </div>
          {/* blogsCard */}
            

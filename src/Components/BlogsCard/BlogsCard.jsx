@@ -16,9 +16,11 @@ const BlogsCard = () => {
       />
       
     
-      <div className="absolute bottom-0 left-0 p-3 w-full h-[8rem] lg:h-[10rem]  bg-white  rounded-b-3xl">
-        <h6 className="font-extrabold xl:text-2xl  2xl:text-3xl">Inside AI art</h6>
-        <p className="font-medium text-sm 2xl:text-base   my-2">sfsfsdfdsdfsdgsd</p>
+      <div className="absolute bottom-0 left-0 p-3 w-full h-[8rem] lg:h-[10rem] 2xl:h-[12rem]  bg-white  rounded-b-3xl">
+        <h6 className="font-extrabold xl:text-2xl  2xl:text-3xl">AI vs Human:Who Creates Better Art?</h6>
+      <a href="/blog">
+      <p className="font-semibold  text-sm 2xl:text-xl   my-2 2xl:mt-8">Read More</p>
+        </a> 
       </div>
     </div> 
     </>
