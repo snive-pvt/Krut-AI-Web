@@ -1,0 +1,10 @@
+/* For WebKit browsers (e.g., Chrome, Safari) */
+.blog-preview-modal::-webkit-scrollbar {
+    width: 5px; /* adjust the width as needed */
+  }
+  
+  .blog-preview-modal::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* color of the thumb */
+    border-radius: 5px; /* roundness of the thumb */
+  }
+  

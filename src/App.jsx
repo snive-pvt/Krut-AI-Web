@@ -4,7 +4,8 @@ import Home from "./Pages/Home/Home";
 import Pricing from "./Pages/Pricing/Pricing";
 import Blogs from "./Pages/Blogs/Blogs";
 import Contact from "./Pages/Contact/Contact";
-
+import Blog from "./Pages/Blog/Blog";
+import AddBlog from "./Pages/AddBlog/AddBlog";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
             <Route path="/" element={<Home />} /> 
             <Route path="/pricing" element={<Pricing />} /> 
             <Route path="/blogs" element={<Blogs />} /> 
+            <Route path="/blog" element={<Blog />}/>
             <Route path="/contact" element={<Contact />} /> 
+            <Route path="/addblog" element={<AddBlog   />} /> 
       </Routes>
     </>
   );
