@@ -97,3 +97,27 @@ export const comparisonTable = [
     },
 ]
 
+export const comparisonTableDemo = [
+    {
+        title: "Free",
+        "Storage": 5,
+        "iStock Quota": "Not Included",
+        "Watermark": "Included",
+        "Clean Anything": "Not Included",
+    },
+    {
+        title: "Plus",
+        "Storage": 50,
+        "iStock Quota": "Unlimited",
+        "Watermark": "Not Included",
+        "Clean Anything": "Included",
+    },
+    {
+        title: "Pro",
+        "Storage": 200,
+        "iStock Quota": "Unlimited",
+        "Watermark": "Not Included",
+        "Clean Anything": "Included",
+    },
+]
+
