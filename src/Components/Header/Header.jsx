@@ -6,12 +6,13 @@ import { BiMailSend } from "react-icons/bi";
 import { MdCastForEducation } from "react-icons/md";
 import { MdOutgoingMail } from "react-icons/md";
 import { CgFileDocument } from "react-icons/cg";
-import { IoChevronDownOutline ,IoChevronUpOutline } from "react-icons/io5";
+import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
+import { Toaster } from 'react-hot-toast'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
-
+  
   const dropdownRef = useRef(null);
 
   const toggleMenu = () => {
@@ -35,6 +36,10 @@ const Header = () => {
       document.removeEventListener("mousedown", closeMenu);
     };
   }, []);
+
+useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [window?.location]);
 
   return (
     <>
@@ -83,12 +88,12 @@ const Header = () => {
 
                   {isSupportOpen && (
                     <div className="w-full bg-black shadow-lg rounded-lg mt-2 mx-16">
-                    
+
                       <Link
                         to="/blogs"
                         className="px-4 py-2  text-white flex gap-2"
                       >
-                        <CgFileDocument style={{marginTop:'3px'}}/> Blog
+                        <CgFileDocument style={{ marginTop: '3px' }} /> Blog
                       </Link>
                       {/* <Link
                         to="/tutorials"
@@ -100,7 +105,7 @@ const Header = () => {
                         to="/contact"
                         className=" px-4 py-2 text-white flex gap-2"
                       >
-                       <MdOutgoingMail  style={{marginTop:'3px'}}/> Contact
+                        <MdOutgoingMail style={{ marginTop: '3px' }} /> Contact
                       </Link>
                     </div>
                   )}
@@ -198,8 +203,8 @@ const Header = () => {
           </div>
 
           <Link
-            to="/"
-            className="hidden md:block  rounded-full text-black font-bold md:text-lg lg:text-2xl 2xl:text-3xl md:px-5 md:py-1 lg:px-7 lg:py-2 2xl:px-9 2xl:py-4"
+            to="/contact"
+            className="hidden md:block  rounded-full text-black font-bold md:text-lg lg:text-xl 2xl:text-2xl md:px-5 md:py-1 lg:px-7 lg:py-2 2xl:px-9 2xl:py-4"
             style={{
               background:
                 "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
@@ -209,6 +214,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <div><Toaster /></div>
     </>
   );
 };

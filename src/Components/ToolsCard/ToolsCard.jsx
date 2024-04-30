@@ -1,8 +1,10 @@
 import React,{useState} from 'react';
 import toolImage from '../../assets/Images/toolsbgg.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const ToolsCard = ({ title, description,gif,thumbnail, isComingSoon,index }) => {
 
+  const Navigate = useNavigate();
   const [activeTileIndex, setActiveTileIndex] = useState(null);
     const handleTileMouseEnter = (index) => {
       if( index !== 7){
@@ -15,8 +17,8 @@ const ToolsCard = ({ title, description,gif,thumbnail, isComingSoon,index }) => 
     };
   return (
 
-    <div className="bg-white relative px-2 py-2 h-[21rem] xl:h-[24rem] 2xl:h-[24rem] rounded-[1rem] "   onMouseEnter={() => handleTileMouseEnter(index)}
-    onMouseLeave={handleTileMouseLeave} >
+    <div className="bg-white relative px-2 py-2 h-[21rem] xl:h-[24rem] 2xl:h-[24rem] rounded-[1rem] cursor-pointer"   onMouseEnter={() => handleTileMouseEnter(index)}
+    onMouseLeave={handleTileMouseLeave} onClick={()=>Navigate(`/tools?tool=${title}`)} >
       {isComingSoon && (
         <div className="absolute   inset-0 top-[30%] flex  justify-center  text-white px-2 py-1 rounded-tl-2xl rounded-br-xl">
           <span className="lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold 2xl:font-bold md:text-sm xl:font-extrabold">Coming soon</span>

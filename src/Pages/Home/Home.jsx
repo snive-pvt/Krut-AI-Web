@@ -51,7 +51,7 @@ const Home = () => {
               </p>
               {/* <p className="md:hidden text-white text-center 2xl:text-3xl xl:text-xl mx-auto">click of a button</p> */}
 
-              <ul class="hidden md:flex list-disc text-white  lg:gap-10 gap-5 justify-center items-center mt-5 lg:mt-3 xl:mt-4 2xl:mt-5 text-xs lg:text-sm xl:text-lg 2xl:text-2xl mx-auto">
+              <ul className="hidden md:flex list-disc text-white  lg:gap-10 gap-5 justify-center items-center mt-5 lg:mt-3 xl:mt-4 2xl:mt-5 text-xs lg:text-sm xl:text-lg 2xl:text-2xl mx-auto">
                 <li>Cost-saving</li>
                 <li>Increased Efficiency</li>
                 <li>Higher Accuracy</li>
@@ -59,7 +59,8 @@ const Home = () => {
               </ul>
             </div>
 
-            <div
+           <Link to='/contact'>
+           <div
               className="sec-one-button  text-black rounded-full px-8 py-1 mt-16 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
               style={{
                 background:
@@ -68,12 +69,14 @@ const Home = () => {
             >
               Try Krut AI
             </div>
+           </Link>
+
           </div>
         </div>
       </div>
 
       {/* Second Section */}
-      <div class=" min-h-[8rem] md:min-h-[9rem] lg:min-h-[10rem] flex justify-center items-center mx-[16px] 2xl:mx-[64px] lg:mx-7 ">
+      <div className=" min-h-[8rem] md:min-h-[9rem] lg:min-h-[10rem] flex justify-center items-center mx-[16px] 2xl:mx-[64px] lg:mx-7 ">
         <video
           className="w-full h-auto  rounded-2xl 2xl:rounded-[3rem]  mt-[-1rem] mb-[-1rem] md:mb-[-2rem] lg:mb-[-3rem] 2xl:mt-[-4rem] 2xl:mb-[-4rem] object-cover"
           autoPlay
@@ -215,7 +218,7 @@ const Home = () => {
               Ideal Price
             </h1>
           </div>
-          <div className="lg:px-36 xl:px-60 mx-8 md:mx-4 2xl:mx-20 mt-8 price-cards ">
+          <div className="lg:px-32 xl:px-60 mx-8 md:mx-4 2xl:mx-20 mt-8 price-cards ">
             <div className="grid grid-cols-1 sm:grid-cols-1   md:grid-cols-3  gap-8">
               <div className="  border-2 border-krutNeon text-white rounded-[2.5rem] ">
                 <div className="p-5">
@@ -225,9 +228,12 @@ const Home = () => {
                   </p>
                   <h1 className="font-semibold text-2xl mb-4">$0/month*</h1>
                   <div className="flex items-center justify-center">
-                    <button className="bg-white text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5">
+                    <Link to='/contact'>
+                    <button className=" text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5" style={{background:'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'}}>
                       Try for free
                     </button>
+                    </Link>
+                    
                   </div>
                 </div>
 
@@ -248,12 +254,16 @@ const Home = () => {
                   </p>
                   <h1 className="font-semibold text-2xl mb-4">$20/month*</h1>
                   <div className="flex items-center justify-center">
-                    <button className="text-black justify-center px-6 py-1 font-semibold rounded-2xl bg-white mb-5">
+                    <Link to='/contact'>
+                    <button className="text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5" style={{background:'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'}}>
                       Get Plus
                     </button>
+                    </Link>
+                    
+
                   </div>
                 </div>
-                <div className=" bg-white  text-gray-500 text-sm font-medium leading-loose rounded-t-[1.5rem] rounded-b-[2.3rem] px-5 py-5 tracking-tight">
+                <div className=" bg-white  text-gray-500 text-sm font-medium leading-loose rounded-t-[1.5rem] rounded-b-[2.3rem] px-5 py-5 tracking-tight" >
                   <p> &#x2713; 50GB Storage</p>
                   <p> &#x2713; Unlimited Photos by iStock</p>
                   <p>&#x2713; Unlimited Projects</p>
@@ -270,9 +280,12 @@ const Home = () => {
                   </p>
                   <h1 className="font-semibold text-2xl mb-4">$50/month*</h1>
                   <div className="flex items-center justify-center">
-                    <button className="bg-gradient-to-b  from-krutNeon via-krutNeon to-gray-600 text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5">
+                    <Link to='/contact'>
+                    <button className=" text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5" style={{background:'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)'}}>
                       Be a Pro
                     </button>
+                    </Link>
+                    
                   </div>
                 </div>
                 <div className=" bg-white  text-gray-500 text-sm leading-loose font-medium rounded-t-[1.5rem] rounded-b-[2.3rem] px-5 py-5 tracking-tight">
@@ -285,6 +298,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+
           <Link to='/pricing'>
           <div className="flex items-center justify-center text-black mt-10 mb-10">
             <div
@@ -303,6 +317,8 @@ const Home = () => {
       </div>
 
       <GetStarted />
+
+      <Footer/>
     </>
   );
 };
