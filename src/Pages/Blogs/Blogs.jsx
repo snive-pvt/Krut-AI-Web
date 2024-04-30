@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../Components/Header/Header";
 import BlogsCard from "../../Components/BlogsCard/BlogsCard";
 import GetStarted from "../../Components/GetStarted/GetStarted"
+import Footer from "../../Components/Footer/Footer";
 
 const Blogs = () => {
   const linearGreenBackground = {
@@ -69,6 +70,8 @@ const Blogs = () => {
 </div>
 
      <GetStarted />
+
+     <Footer />
 
       </div>
     </>
