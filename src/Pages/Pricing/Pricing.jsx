@@ -7,6 +7,8 @@ import PriceComparisonTable from '../../Components/Pricing/PriceComparisonTable'
 import TalkToUsComponent from '../../Components/Pricing/TalkToUsComponent'
 import HeroPricing from '../../Components/Pricing/HeroPricing'
 import PricingCards from '../../Components/Pricing/PricingCards'
+import { faqData } from '../../Data/faqData'
+import Faq from '../../Components/faq/Faq'
 
 function Pricing() {
     const [isMonthly, setIsMonthly] = useState(false);  //boolean for monthly or yearly
@@ -21,9 +23,7 @@ function Pricing() {
                 <div id='CompareChart' className='scroll-mt-10'></div>
                 <PricingCards isMonthly={isMonthly} isExpanded={false} />
                 <PriceComparisonTable />
-
-                {/* ==============  FAQ  ============ */}
-
+                <Faq {...faqData} />
                 <GetStarted />
                 <Footer />
             </div>
