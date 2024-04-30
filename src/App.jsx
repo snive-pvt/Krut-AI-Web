@@ -7,19 +7,21 @@ import Contact from "./Pages/Contact/Contact";
 import Blog from "./Pages/Blog/Blog";
 import AddBlog from "./Pages/AddBlog/AddBlog";
 import ToolsMobile from "./Pages/ToolsMobile/ToolsMobile";
+import Tools from "./Pages/tools/Tools";
 
 function App() {
 
   return (
     <>
       <Routes>
-            <Route path="/" element={<Home />} /> 
-            <Route path="/pricing" element={<Pricing />} /> 
-            <Route path="/blogs" element={<Blogs />} /> 
-            <Route path="/blog" element={<Blog />}/>
-            <Route path="/contact" element={<Contact />} /> 
-            <Route path="/addblog" element={<AddBlog   />} /> 
-            <Route path="/mobiletools" element={<ToolsMobile   />} /> 
+        <Route path="/" element={<Home />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/addblog" element={<AddBlog />} />
+        <Route path="/mobiletools" element={<ToolsMobile />} />
+        <Route path="/tools" element={<Tools/>}></Route>
       </Routes>
     </>
   );

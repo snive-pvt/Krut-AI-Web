@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { pricingTable } from '../../assets/pricingTable';
+import { useNavigate } from 'react-router-dom';
 
 function PricingCards({ isMonthly, isExpanded }) {
     const [plusMultiplier, setPlusMultiplier] = useState(1);  //multiplier for no of users _ plus
     const [proMultiplier, setProMultiplier] = useState(1);  //multiplier for no of users _ pro
+    const Navigate = useNavigate();
 
     return (
         <>
             {/* ======== Pricing Cards ========= */}
             <div className="w-full">
-                <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-evenly">
+                <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-evenly">
                     {pricingTable && pricingTable.map((list, index) =>
 
                         <div key={index} className="border-2 border-krutNeon border-opacity-40 text-white rounded-3xl h-full mx-8 sm:mx-4 xl:mx-8 max-w-[468px] mt-14 sm:my-5" >
@@ -39,10 +41,10 @@ function PricingCards({ isMonthly, isExpanded }) {
                                             {/* Multiplier value */}
                                             <div className="absolute z-50"
                                                 style={{
-                                                    marginLeft: `${(((list?.title !== "Plus" ? plusMultiplier : proMultiplier) - 1) * (72.5 / 11)) + 4.5}%`
+                                                    marginLeft: `${(((list?.title !== "Plus" ? plusMultiplier : proMultiplier) - 1) * (73 / 11)) + 5.5}%`
                                                 }}  >
                                                 <div className="flex" >
-                                                    <span className="multiplier-value relative text-black text-lg font-semibold w-[30px] h-[30px] mt-2" >
+                                                    <span className="multiplier-value relative text-black text-lg font-semibold w-[30px] h-[30px] mt-2 pointer-events-none" >
                                                         {(list?.title !== "Plus" ? plusMultiplier : proMultiplier)}x
                                                     </span>
                                                 </div>
@@ -53,7 +55,7 @@ function PricingCards({ isMonthly, isExpanded }) {
                                                 className="w-full accent-white border-gray-300 cursor-ew-resize relative h-[50px]"
                                                 style={{
                                                     borderRadius: '25px', // Set border radius to half of the height for a circular slider
-                                                    background: 'linear-gradient(to right, #00D4EF 0%, #00D4EF calc((var(--range-value) - 1) * 10%), #000000 calc(var(--range-value) * 10%), #000000 100%)', // Set background gradient
+                                                    background: 'linear-gradient(to right, #00D4EF 0%, #FFF calc((var(--range-value) - 1) * 10%), #000000 calc(var(--range-value) * 10%), #000000 100%)', // Set background gradient
                                                     outline: 'white solid 1px', // Set white outline
                                                     appearance: 'none', // Remove default styles
                                                     '--range-value': (list?.title !== "Plus" ? plusMultiplier : proMultiplier) // Set custom property for the current value
@@ -69,7 +71,7 @@ function PricingCards({ isMonthly, isExpanded }) {
                                             />
 
                                             <div className="text-center">
-                                                <p className='text-sm'>More Than 10 Users? <span className='text-krutNeon'>
+                                                <p className='text-sm'>More Than 10 Users? <span className='text-krutNeon cursor-pointer' onClick={()=>Navigate('/contact')}>
                                                     Contact<span className='text-transparent text-xs'>.</span>Us</span>
                                                 </p>
                                             </div>
@@ -82,7 +84,9 @@ function PricingCards({ isMonthly, isExpanded }) {
 
                                 <div className="flex items-center justify-center">
 
-                                    <button className="text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7" style={{
+                                    <button className="text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
+                                    onClick={()=>Navigate('/contact')}
+                                    style={{
                                         backgroundImage: list?.title === "Pro" ?
                                             'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' :
                                             'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'
