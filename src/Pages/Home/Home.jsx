@@ -77,6 +77,8 @@ const Home = () => {
         <video
           className="w-full h-auto  rounded-2xl 2xl:rounded-[3rem]  mt-[-1rem] mb-[-1rem] md:mb-[-2rem] lg:mb-[-3rem] 2xl:mt-[-4rem] 2xl:mb-[-4rem] object-cover"
           autoPlay
+          loop
+          muted
           controls
         >
           <source src={PromoVideo} type="video/mp4" />
@@ -120,10 +122,12 @@ const Home = () => {
               </div>
             ))}
           </div>
-
-          <div className="md:hidden border border-krutNeon mx-16 py-2 text-white text-center rounded-full  mt-10 text-lg font-bold">
+         <Link to='/mobiletools'>
+         <div className="md:hidden border border-krutNeon mx-16 py-2 text-white text-center rounded-full  mt-10 text-lg font-bold">
             Explore More
           </div>
+          </Link>
+          
         </div>
       </div>
 
@@ -136,29 +140,28 @@ const Home = () => {
             <h1 className="text-center font-bold text-3xl md:text-5xl lg:text-6xl">
               Our Trusted Partners
             </h1>
-            <div className="flex gap-5 mt-4 md:gap-10 md:mt-8 items-center justify-center">
-  <img
-    className="w-12 h-6 md:w-16 md:h-12 lg:w-24 lg:h-14 2xl:w-36 2xl:h-20"
-    src={github}
-    alt=""
-  />
-  <img
-    className="w-10 h-5 md:w-16 md:h-16 lg:w-20 lg:h-12 2xl:w-28 2xl:h-16"
-    src={aws}
-    alt=""
-  />
-  <img
-    className="w-20 h-4 md:w-60 md:h-16 lg:w-38 lg:h-10 2xl:w-60 2xl:h-12"
-    src={shellcode}
-    alt=""
-  />
-  <img
-    className="w-18 h-5 md:w-52 md:h-14 lg:w-36 lg:h-10 2xl:w-52 2xl:h-14"
-    src={mongodb}
-    alt=""
-  />
-</div>
-
+            <div className="flex gap-5 mt-4 md:gap-8 lg:gap-10 md:mt-8 items-center justify-center">
+              <img
+                className="w-12 h-6 md:w-20 md:h-12 lg:w-24 lg:h-14 2xl:w-36 2xl:h-20"
+                src={github}
+                alt=""
+              />
+              <img
+                className="w-10 h-5 md:w-16 md:h-10 lg:w-20 lg:h-12 2xl:w-28 2xl:h-16"
+                src={aws}
+                alt=""
+              />
+              <img
+                className="w-20 h-4 md:w-36 md:h-10 lg:w-38 xl:w-48 lg:h-10 2xl:w-60 2xl:h-12"
+                src={shellcode}
+                alt=""
+              />
+              <img
+                className="w-18 h-5 md:w-32 md:h-8 lg:w-36 lg:h-10 2xl:w-52 2xl:h-14"
+                src={mongodb}
+                alt=""
+              />
+            </div>
           </div>
 
           <div className="border border-krutNeon  min-h-[10rem] mt-8 md:min-h-[20rem] 2xl:min-h-[25rem] text-white rounded-[43px] mx-4 md:mx-16 lg:mx-20 xl:mx-[17rem] flex flex-col  justify-center items-center">
@@ -250,7 +253,7 @@ const Home = () => {
                     </button>
                   </div>
                 </div>
-                <div className=" bg-white  text-gray-500 text-sm leading-loose rounded-t-[1.5rem] rounded-b-[2.3rem] px-5 py-5 tracking-tight">
+                <div className=" bg-white  text-gray-500 text-sm font-medium leading-loose rounded-t-[1.5rem] rounded-b-[2.3rem] px-5 py-5 tracking-tight">
                   <p> &#x2713; 50GB Storage</p>
                   <p> &#x2713; Unlimited Photos by iStock</p>
                   <p>&#x2713; Unlimited Projects</p>
@@ -282,9 +285,10 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <Link to='/pricing'>
           <div className="flex items-center justify-center text-black mt-10 mb-10">
             <div
-              className=" rounded-[2rem] w-[2/5] py-2 mx-10 text-xl font-black flex justify-center px-10"
+              className=" rounded-[2rem] w-[2/5] py-2 mx-10 text-xl font-bold flex justify-center px-10"
               style={{
                 background:
                   "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
@@ -293,6 +297,8 @@ const Home = () => {
               Compare More
             </div>
           </div>
+          </Link>
+          
         </div>
       </div>
 
