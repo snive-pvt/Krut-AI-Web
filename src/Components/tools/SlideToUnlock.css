@@ -1,0 +1,29 @@
+.slide-to-unlock {
+    width: 300px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border: 2px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px; /* Half of height to make it rounded */
+  }
+  
+  .slider {
+    width: 300px; /* Adjust as needed */
+    height: 100%;
+    background-color: #007bff; /* Adjust as needed */
+    color: white; /* Adjust as needed */
+    text-align: center;
+    line-height: 50px; /* Center text vertically */
+    position: absolute;
+    cursor: pointer;
+    transition: left 0.3s;
+  }
+  
+  .slider.unlocked {
+    background-color: #28a745; /* Adjust as needed */
+  }
+  
+  .slider:hover {
+    background-color: #0056b3; /* Adjust as needed */
+  }
+  
