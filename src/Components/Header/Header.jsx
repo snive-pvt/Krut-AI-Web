@@ -7,11 +7,14 @@ import { MdCastForEducation } from "react-icons/md";
 import { MdOutgoingMail } from "react-icons/md";
 import { CgFileDocument } from "react-icons/cg";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast';
+import { useLocation } from "react-router-dom";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const location = useLocation(); 
   
   const dropdownRef = useRef(null);
 
@@ -39,7 +42,7 @@ const Header = () => {
 
 useEffect(() => {
       window.scrollTo(0, 0);
-  }, [window?.location]);
+  }, [location]);
 
   return (
     <>
