@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 import "./SlideToUnlock.css"; // Import your CSS file for styling
 function ToolSlider({ beforeImg, afterImg }) {
+
+function ToolSlider() {
   const [isClicked, setIsClicked] = useState(false);
 
   //before img
