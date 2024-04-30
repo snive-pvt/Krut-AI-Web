@@ -9,6 +9,7 @@ import AddBlog from "./Pages/AddBlog/AddBlog";
 import ToolsMobile from "./Pages/ToolsMobile/ToolsMobile";
 
 function App() {
+
   return (
     <>
       <Routes>
