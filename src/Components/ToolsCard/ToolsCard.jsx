@@ -5,7 +5,10 @@ const ToolsCard = ({ title, description,gif,thumbnail, isComingSoon,index }) => 
 
   const [activeTileIndex, setActiveTileIndex] = useState(null);
     const handleTileMouseEnter = (index) => {
+      if( index !== 7){
         setActiveTileIndex(index);
+      }
+        
     };
     const handleTileMouseLeave = () => {
         setActiveTileIndex(null);
@@ -20,7 +23,8 @@ const ToolsCard = ({ title, description,gif,thumbnail, isComingSoon,index }) => 
         </div>
       )}
       <img src={thumbnail} alt={title} className={activeTileIndex === index ? "hidden" : "block h-[16rem] xl:h-[20rem] 2xl:h-[18rem] w-full object-cover rounded-t-3xl transition-opacity duration-500"} />
-      {(!isComingSoon || (isComingSoon && activeTileIndex !== index)) && (
+     
+      {!isComingSoon && (
         <video
           src={gif}
           autoPlay
@@ -30,7 +34,7 @@ const ToolsCard = ({ title, description,gif,thumbnail, isComingSoon,index }) => 
       )}
  
       <div className="absolute bottom-0 left-0 p-3 w-full h-[6rem] md:h-[6rem] xl:h-[7rem] 2xl:h-[7rem]   bg-white  rounded-b-3xl">
-        <h6 className="font-black xl:text-[22px] 2xl:text-3xl">{title}</h6>
+        <h6 className="font-extrabold  xl:text-[22px] 2xl:text-3xl">{title}</h6>
         <p className="font-medium text-xs lg:text-sm 2xl:text-base   mt-2">{description}</p>
       </div>
     </div>  
