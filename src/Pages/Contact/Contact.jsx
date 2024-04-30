@@ -3,6 +3,8 @@ import Header from "../../Components/Header/Header";
 import ContactUs from "../../assets/Images/contactus.png";
 import './contact.css';
 import Footer from '../../Components/Footer/Footer';
+import Faq from '../../Components/faq/Faq';
+import { faqData } from '../../Data/faqData';
 
 const Contact = () => {
   // State for input fields
@@ -79,6 +81,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <Faq {...faqData} />
+
       <Footer/>
     </div>
 
