@@ -1,7 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../../assets/Images/image_prev_ui (2).png"
+import { useNavigate } from 'react-router-dom'
+import { subscribeAPI } from '../../utils/APIservice';
+import toast from 'react-hot-toast';
 
 function Footer() {
+    const Navigate = useNavigate();
+    const [email, setEmail] = useState("");
+
+    // Validation function for email using regex
+    function isValidEmail(inputEmail) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(inputEmail);
+    }
+
+    //---------------_ Handle User Login ----------------------------------
+    async function handleUserSubscribe() {
+        setEmail(email.trimEnd());
+        const emailCheck = isValidEmail(email);
+        if (!email || !emailCheck) {
+            return toast.error("Please enter a valid email address");
+        }
+
+        try {
+            toast.promise(
+                subscribeAPI({ email }),
+                {
+                    loading: 'Subscribing...',
+                    success: <b>Subscribed successfully!</b>,
+                    error: <b>Subscription failed. Please try again later.</b>,
+                }
+            );
+        } catch (error) {
+            console.error("Error subscribing:", error);
+            toast.error("An unexpected error occurred. Please try again later.");
+        }
+    }
+
     return (
         <>
             <div className="flex flex-col mt-10">
@@ -12,8 +47,13 @@ function Footer() {
                         <div className="m-3 w-[90%] lg:max-w-[40%] xl:max-w-2xl text-white space-y-7">
                             <h2 className='text-3xl sm:text-5xl font-bold'>Receive <span className='text-krutNeon'>messages</span> from the future</h2>
                             <div className="flex">
-                                <input className='w-[70%] bg-transparent border border-white rounded px-3 py-0.5' type="text" placeholder='Email' />
-                                <button className='ms-5 sm:ms-10 border border-white w-8 h-8 rounded-full flex justify-center items-center'>
+                                <input className='w-[70%] bg-transparent border border-white rounded px-3 py-0.5' type="text" placeholder='Email'
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <button className='ms-5 sm:ms-10 border border-white w-8 h-8 rounded-full flex justify-center items-center 
+                                hover:bg-white hover:text-black'
+                                    onClick={() => handleUserSubscribe()}
+                                >
                                     <span className="material-symbols-outlined text-lg">
                                         arrow_forward
                                     </span>
@@ -30,14 +70,17 @@ function Footer() {
                                 <h3 className="text-lg sm:text-xl font-semibold  mt-4 mb-2">Company</h3>
                                 <ul className='text-sm sm:text-lg font-thin'>
                                     <li>Community</li>
-                                    <li>Blogs</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate('/blogs')}>Blogs</li>
                                     <li>Tutorials</li>
-                                    <li className='hidden lg:block'>Pricing</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate('/pricing')}>Pricing</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate('/contact')}>Contact Us</li>
+                                    <li>Legal</li>
+                                    {/* <li className='hidden lg:block'>Pricing</li>
                                     <li className='hidden lg:block'>Contact Us</li>
-                                    <li className='hidden lg:block'>Legal</li>
+                                    <li className='hidden lg:block'>Legal</li> */}
                                 </ul>
                             </div>
-                            <div className='px-3 sm:px-6 block lg:hidden'>
+                            {/* <div className='px-3 sm:px-6 block lg:hidden'>
 
                                 <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-2">Company</h3>
                                 <ul className='text-sm sm:text-lg font-thin'>
@@ -45,7 +88,7 @@ function Footer() {
                                     <li>Contact Us</li>
                                     <li>Legal</li>
                                 </ul>
-                            </div>
+                            </div> */}
                             <div className='px-3 sm:px-6'>
 
                                 <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-2">Tools</h3>
@@ -78,13 +121,13 @@ function Footer() {
                             <a href="http://discord.com" target="_blank">
                                 <img className='h-8' src="/icons/discord.png" alt="discord" />
                             </a>
-                            <a href="http://linkedin.com" target="_blank">
+                            <a href="https://www.linkedin.com/company/krut-ai/?viewAsMember=true" target="_blank">
                                 <img className='h-8' src="/icons/linkedIn.png" alt="linkedIn" />
                             </a>
-                            <a href="http://instagram.com" target="_blank">
+                            <a href="https://www.instagram.com/_krut.ai/" target="_blank">
                                 <img className='h-8' src="/icons/instagram.png" alt="instagram" />
                             </a>
-                            <a href="http://x.com" target="_blank">
+                            <a href="https://twitter.com/krutAI_" target="_blank">
                                 <img className='h-8' src="/icons/x.png" alt="x" />
                             </a>
                         </div>
