@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from "../../Components/Header/Header";
 import ContactUs from "../../assets/Images/contactus.png";
 import './contact.css';
+import Footer from '../../Components/Footer/Footer';
 
 const Contact = () => {
   // State for input fields
@@ -78,7 +79,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
+
+
   );
 }
 

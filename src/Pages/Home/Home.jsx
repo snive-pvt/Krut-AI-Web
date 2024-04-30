@@ -304,6 +304,8 @@ const Home = () => {
       </div>
 
       <GetStarted />
+
+      <Footer/>
     </>
   );
 };
