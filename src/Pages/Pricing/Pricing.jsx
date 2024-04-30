@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from '../../Components/Header/Header'
 import "./pricing.css"
 import Footer from '../../Components/Footer/Footer'
-// import GetStarted from '../../Components/GetStarted/GetStarted'
+import GetStarted from '../../Components/GetStarted/GetStarted'
 import PriceComparisonTable from '../../Components/Pricing/PriceComparisonTable'
 import TalkToUsComponent from '../../Components/Pricing/TalkToUsComponent'
 import HeroPricing from '../../Components/Pricing/HeroPricing'
@@ -24,7 +24,7 @@ function Pricing() {
 
                 {/* ==============  FAQ  ============ */}
 
-                {/* <GetStarted /> */}
+                <GetStarted />
                 <Footer />
             </div>
         </>

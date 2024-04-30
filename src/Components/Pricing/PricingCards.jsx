@@ -11,7 +11,7 @@ function PricingCards({ isMonthly, isExpanded }) {
         <>
             {/* ======== Pricing Cards ========= */}
             <div className="w-full">
-                <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-evenly">
+                <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-evenly overflow-hidden">
                     {pricingTable && pricingTable.map((list, index) =>
 
                         <div key={index} className="border-2 border-krutNeon border-opacity-40 text-white rounded-3xl h-full mx-8 sm:mx-4 xl:mx-8 max-w-[468px] mt-14 sm:my-5" >

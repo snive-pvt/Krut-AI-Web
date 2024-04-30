@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./SlideToUnlock.css"; // Import your CSS file for styling
-function ToolSlider() {
+function ToolSlider({ beforeImg, afterImg }) {
   const [isClicked, setIsClicked] = useState(false);
+
+  //before img
+  //after img
 
   return (
     <div className="  bg-cover bg-no-repeat bg-center min-h-[560px] lg:min-h-[600px]">
       <div className="flex   items-center justify-center ">
         <div className="relative">
           <img
-            class="w-[600px] h-[511px]  rounded-l-3xl relative -z-10 left-6 "
+            className="w-[600px] h-[511px]  rounded-l-3xl relative -z-10 left-6 "
             src="https://s3-alpha-sig.figma.com/img/df07/ce07/3fd779dba89545e807b28d76be6ffbbc?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lUCdEdc~cqXINQOdf1Xpuu0nKp9phif5dbJziuYubvgfis4mGhq47KqCG2z~wn8iMmK71r5GdkQeu02oJ8Y58r18FfJBgThmXlXxKbhkrn8Vco7wvrJiERnIOGJoDdD84b8QDLs4ZRI-5oflYCUqiDa-stlmJBE6p09p-wAj354vIkPLdBDaj3x8fZuCGvHtPPCWLy9-t0GdjmuHlpYiP09pAR8EZwyvk7sddgJIldBJu65D3tvkhnWcHa21bTVKXumnu0K~K7isb2bgcaajaxi~Ax56x~nS2wh55dUDKcRvcVN72NJO2ka4doN5ckckOejW~WQJpOiJAjrhvC7EbQ__"
           />
           <div
@@ -40,7 +43,7 @@ function ToolSlider() {
         </div>
         {isClicked && (
           <img
-            class="w-[600px] h-[511px] bg-white rounded-3xl"
+            className="w-[600px] h-[511px] bg-white rounded-3xl"
             src="https://s3-alpha-sig.figma.com/img/df07/ce07/3fd779dba89545e807b28d76be6ffbbc?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lUCdEdc~cqXINQOdf1Xpuu0nKp9phif5dbJziuYubvgfis4mGhq47KqCG2z~wn8iMmK71r5GdkQeu02oJ8Y58r18FfJBgThmXlXxKbhkrn8Vco7wvrJiERnIOGJoDdD84b8QDLs4ZRI-5oflYCUqiDa-stlmJBE6p09p-wAj354vIkPLdBDaj3x8fZuCGvHtPPCWLy9-t0GdjmuHlpYiP09pAR8EZwyvk7sddgJIldBJu65D3tvkhnWcHa21bTVKXumnu0K~K7isb2bgcaajaxi~Ax56x~nS2wh55dUDKcRvcVN72NJO2ka4doN5ckckOejW~WQJpOiJAjrhvC7EbQ__"
             alt="Your Image"
           />
@@ -48,7 +51,7 @@ function ToolSlider() {
 
         {isClicked == false && (
           <div
-            class="w-[600px] h-[511px] bg-white rounded-3xl"
+            className="w-[600px] h-[511px] bg-white rounded-3xl"
             src="https://via.placeholder.com/1175x511"
           ></div>
         )}
