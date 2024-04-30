@@ -6,6 +6,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import Contact from "./Pages/Contact/Contact";
 import Blog from "./Pages/Blog/Blog";
 import AddBlog from "./Pages/AddBlog/AddBlog";
+import ToolsMobile from "./Pages/ToolsMobile/ToolsMobile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/blog" element={<Blog />}/>
             <Route path="/contact" element={<Contact />} /> 
             <Route path="/addblog" element={<AddBlog   />} /> 
+            <Route path="/mobiletools" element={<ToolsMobile   />} /> 
       </Routes>
     </>
   );
