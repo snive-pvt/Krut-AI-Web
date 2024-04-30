@@ -6,17 +6,26 @@ import { BiMailSend } from "react-icons/bi";
 import { MdCastForEducation } from "react-icons/md";
 import { MdOutgoingMail } from "react-icons/md";
 import { CgFileDocument } from "react-icons/cg";
+import { IoChevronDownOutline ,IoChevronUpOutline } from "react-icons/io5";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSupportOpen, setIsSupportOpen] = useState(false);
 
   const dropdownRef = useRef(null);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleSupportMenu = () => {
+    setIsSupportOpen(!isSupportOpen);
   };
 
   const closeMenu = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setIsOpen(false);
+      setIsSupportOpen(false);
     }
   };
 
@@ -29,7 +38,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="px-[16px] md:px-8 py-4 2xl:px-16 2xl:py-6">
+      <div className="px-[16px] md:px-8 py-4 2xl:px-16 2xl:py-6 z-50">
         <div className="flex justify-between items-center mt-4 2xl:mt-3">
           <div className="logo">
             <Link to="/">
@@ -38,14 +47,14 @@ const Header = () => {
           </div>
 
           {/* Mobile Mode */}
-          <div className="md:hidden">
+          <div className="md:hidden z-50">
             <HiMenuAlt4 className="text-white text-3xl" onClick={toggleMenu} />
           </div>
 
           {isOpen && (
             <div
               ref={dropdownRef}
-              className="md:hidden absolute top-0 left-0 w-full bg-black p-4"
+              className="md:hidden z-50 absolute top-0 left-0 w-full bg-black p-4"
             >
               <div className="relative flex flex-col  mx-4 my-4 gap-4 py-5">
                 <Link
@@ -56,24 +65,45 @@ const Header = () => {
                 </Link>
                 <div className="relative group ">
                   <Link
-                    to="/"
-                    className="text-white text-xl 2xl:text-2xl font-semibold"
-                    
+                    to=""
+                    className="text-white text-xl 2xl:text-2xl font-semibold flex gap-5"
+                    onClick={toggleSupportMenu}
                   >
-                    Support
+                    Support{" "}
+                    {isSupportOpen ? (
+                      <IoChevronUpOutline
+                        style={{ color: "white", marginTop: "3px" }}
+                      />
+                    ) : (
+                      <IoChevronDownOutline
+                        style={{ color: "white", marginTop: "3px" }}
+                      />
+                    )}
                   </Link>
 
-                  <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 hidden group-hover:block">
-                    <Link to="" className="block px-4 py-2 text-gray-800">
-                      Contact
-                    </Link>
-                    <Link to="/blogs" className="block px-4 py-2 text-gray-800">
-                      Blogs
-                    </Link>
-                    <Link to="" className="block px-4 py-2 text-gray-800">
-                      Tutorials
-                    </Link>
-                  </div>
+                  {isSupportOpen && (
+                    <div className="w-full bg-black shadow-lg rounded-lg mt-2 mx-16">
+                    
+                      <Link
+                        to="/blogs"
+                        className="px-4 py-2  text-white flex gap-2"
+                      >
+                        <CgFileDocument style={{marginTop:'3px'}}/> Blog
+                      </Link>
+                      {/* <Link
+                        to="/tutorials"
+                        className=" px-4 py-2  text-white flex gap-2"
+                      >
+                        <MdCastForEducation style={{marginTop:'3px'}}/> Tutorials
+                      </Link> */}
+                      <Link
+                        to="/contact"
+                        className=" px-4 py-2 text-white flex gap-2"
+                      >
+                       <MdOutgoingMail  style={{marginTop:'3px'}}/> Contact
+                      </Link>
+                    </div>
+                  )}
                 </div>
                 <Link
                   to="/"
@@ -123,7 +153,7 @@ const Header = () => {
                   </div>
                 </Link>
 
-                <Link to="/tutorials" className="block px-4 py-2 text-white ">
+                {/* <Link to="/tutorials" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
                     <div className="text-4xl">
                       <MdCastForEducation />
@@ -135,7 +165,7 @@ const Header = () => {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </Link> */}
 
                 <Link to="/contact" className="block px-4 py-2 text-white ">
                   <div className="flex hover:bg-white hover:text-black hover:rounded-xl">
