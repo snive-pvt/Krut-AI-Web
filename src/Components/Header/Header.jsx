@@ -6,7 +6,8 @@ import { BiMailSend } from "react-icons/bi";
 import { MdCastForEducation } from "react-icons/md";
 import { MdOutgoingMail } from "react-icons/md";
 import { CgFileDocument } from "react-icons/cg";
-import { IoChevronDownOutline ,IoChevronUpOutline } from "react-icons/io5";
+import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
+import { Toaster } from 'react-hot-toast'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,12 +84,12 @@ const Header = () => {
 
                   {isSupportOpen && (
                     <div className="w-full bg-black shadow-lg rounded-lg mt-2 mx-16">
-                    
+
                       <Link
                         to="/blogs"
                         className="px-4 py-2  text-white flex gap-2"
                       >
-                        <CgFileDocument style={{marginTop:'3px'}}/> Blog
+                        <CgFileDocument style={{ marginTop: '3px' }} /> Blog
                       </Link>
                       {/* <Link
                         to="/tutorials"
@@ -100,7 +101,7 @@ const Header = () => {
                         to="/contact"
                         className=" px-4 py-2 text-white flex gap-2"
                       >
-                       <MdOutgoingMail  style={{marginTop:'3px'}}/> Contact
+                        <MdOutgoingMail style={{ marginTop: '3px' }} /> Contact
                       </Link>
                     </div>
                   )}
@@ -209,6 +210,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <div><Toaster /></div>
     </>
   );
 };
