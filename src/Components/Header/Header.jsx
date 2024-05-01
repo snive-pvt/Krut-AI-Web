@@ -66,7 +66,7 @@ useEffect(() => {
             >
               <div className="relative flex flex-col  mx-4 my-4 gap-4 py-5">
                 <Link
-                  to="/"
+                  to="/tools"
                   className="text-white text-xl 2xl:text-2xl font-semibold"
                 >
                   Tools
@@ -131,7 +131,7 @@ useEffect(() => {
 
           <div className="header-items hidden md:flex  lg:gap-16 md:gap-10 mt-2">
             <Link
-              to="/"
+              to="/tools"
               className="text-white md:text-sm lg:text-xl 2xl:text-2xl"
             >
               <span>Tools</span>

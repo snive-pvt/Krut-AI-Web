@@ -3,57 +3,79 @@ import React, { useEffect, useState } from "react";
 import "./SlideToUnlock.css"; // Import your CSS file for styling
 function ToolSlider({ beforeImg, afterImg }) {
   const [isClicked, setIsClicked] = useState(false);
+  const [slideValue, setSlideValue] = useState(0);
 
   useEffect(() => {
     //reset status
     setIsClicked(false);
-  }, [beforeImg])
+    setSlideValue(0);
+  }, [beforeImg]);
+
+  useEffect(() => {
+    if (slideValue > 95) setIsClicked(true);
+    else setIsClicked(false);
+  }, [slideValue]);
 
   return (
     <div className="my-10">
       <div className="flex items-center justify-center ">
 
         <div className="relative">
-          <img className="w-[600px] h-[511px] rounded-l-3xl relative -z-10 left-6 object-cover" src={beforeImg} />
-          <div className="w-[315px] h-[57px] absolute left-36 bottom-20 z-10 cursor-pointer " onClick={() => setIsClicked(!isClicked)}>
-
-            <div className="w-[315px] h-[57px] rounded-[36.50px] border border-white flex items-center hs"></div>
-            <div className="w-[55px] h-[55px] left-0 top-[1px] absolute flex items-center justify-center bg-white rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="23"
-                height="20"
-                viewBox="0 0 23 20"
-                fill="none"
-              >
-                <path
-                  d="M1 9.97897H21.5234M21.5234 9.97897L12.5444 1M21.5234 9.97897L12.5444 18.9579"
-                  stroke="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="h-[31px] left-[94px] top-[13px] absolute text-center text-white text-xl font-medium font-['Satoshi']">
-              Swipe To Future
-            </div>
-          </div>
+          <img className="w-[40vw] h-[50vw] lg:h-[50vh] rounded-l-3xl relative -z-10 left-6 object-cover" src={beforeImg} />
         </div>
 
 
         {isClicked && (
           <img
-            className="w-[600px] h-[511px] bg-white rounded-3xl object-cover"
+            className="w-[40vw] h-[50vw] lg:h-[50vh] bg-white rounded-3xl object-cover"
             src={afterImg}
             alt="Processed Image"
           />
         )}
 
         {isClicked == false && (
-          <div className="w-[600px] h-[511px] bg-white rounded-3xl" ></div>
+          <div className="w-[40vw] h-[50vw] lg:h-[50vh] bg-white rounded-3xl" ></div>
         )}
       </div>
+
+
+
+      <div className="flex items-center justify-center h-full relative mt-10
+      lg:w-[50%] lg:ms-24 lg:-mt-28
+      ">
+        <div className="w-[50%]">
+
+          {/* Center Text */}
+          <div className="absolute -z-10"
+            style={{
+              left: '50%', // Set left position to 50%
+              transform: 'translateX(-50%)', // Move element left by half of its width
+              width: 'fit-content' // Make the width fit the content
+            }}  >
+            <div className="flex h-[45px] items-center" >
+              <span className="text-sm sm:text-lg lg:text-xl xl:text-2xl relative text-white font-semibold mt-2 pointer-events-none" >
+                Swipe to Future
+              </span>
+            </div>
+          </div>
+
+          {/* slider */}
+
+          <input type="range" id="Slider" name="Slider" list="markers" min="1" max="100"
+            className="w-full accent-white border-gray-300 cursor-ew-resize relative h-[50px]"
+            style={{
+              borderRadius: '30px', // Set border radius to half of the height for a circular slider
+              background: 'linear-gradient(to right, #00D4EF 0%, #FFF calc((var(--range-value) - 1)*1%), transparent calc(var(--range-value) * 1%), transparent 100%)', // Set background gradient
+              outline: 'white solid 2px', // Set white outline
+              appearance: 'none', // Remove default styles
+              '--range-value': slideValue // Set custom property for the current value
+            }}
+            value={slideValue}
+            onChange={(e) => { setSlideValue(parseInt(e.target.value)) }}
+          />
+        </div>
+      </div>
+      
     </div>
   );
 }

@@ -3,6 +3,7 @@ import logo from "../../assets/Images/image_prev_ui (2).png"
 import { useNavigate } from 'react-router-dom'
 import { subscribeAPI } from '../../utils/APIservice';
 import toast from 'react-hot-toast';
+import cardData from '../../Data/CardData';
 
 function Footer() {
     const Navigate = useNavigate();
@@ -93,20 +94,20 @@ function Footer() {
 
                                 <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-2">Tools</h3>
                                 <ul className='text-sm sm:text-lg font-thin'>
-                                    <li>Product Studio</li>
-                                    <li>Model Studio</li>
-                                    <li>Banner Generation</li>
-                                    <li>Background Remover</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[0]?.link)}>{cardData[0]?.title}</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[1]?.link)}>{cardData[1]?.title}</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[2]?.link)}>{cardData[2]?.title}</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[3]?.link)}>{cardData[3]?.title}</li>
                                 </ul>
                             </div>
                             <div className='px-3 sm:px-6'>
 
                                 <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-2">Tools</h3>
                                 <ul className='text-sm sm:text-lg font-thin'>
-                                    <li>Upscaler</li>
-                                    <li>Magic Remove</li>
-                                    <li>Magic Replace</li>
-                                    <li>Outpaint</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[4]?.link)}>{cardData[4]?.title}</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[5]?.link)}>{cardData[5]?.title}</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[6]?.link)}>{cardData[6]?.title}</li>
+                                    <li className='cursor-pointer' onClick={() => Navigate(cardData[7]?.link)}>{cardData[7]?.title}</li>
                                 </ul>
                             </div>
                         </div>
