@@ -7,10 +7,11 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 function ToolsList() {
-    const [activeTool, setActiveTool] = useState(null);
+    const [activeTool, setActiveTool] = useState(cardData[0].title);
     const location = useLocation();
 
     useEffect(() => {
+        if (!window.location.search?.length) return;
         const location = window.location.search.split('=')[1];
         const keywords = location.split('%20');
         const data = cardData.filter((item) => item.title.includes(keywords[0]) && ((keywords[1]) ? item.title.includes(keywords[1]) : true));
