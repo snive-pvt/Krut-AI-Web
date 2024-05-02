@@ -31,8 +31,8 @@ const cardData = [
     gif: ModelStudio,
     thumbnail: ModelStudiotn,
     video: ModelStudio,
-    beforeImg: "https://s3-alpha-sig.figma.com/img/df07/ce07/3fd779dba89545e807b28d76be6ffbbc?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lUCdEdc~cqXINQOdf1Xpuu0nKp9phif5dbJziuYubvgfis4mGhq47KqCG2z~wn8iMmK71r5GdkQeu02oJ8Y58r18FfJBgThmXlXxKbhkrn8Vco7wvrJiERnIOGJoDdD84b8QDLs4ZRI-5oflYCUqiDa-stlmJBE6p09p-wAj354vIkPLdBDaj3x8fZuCGvHtPPCWLy9-t0GdjmuHlpYiP09pAR8EZwyvk7sddgJIldBJu65D3tvkhnWcHa21bTVKXumnu0K~K7isb2bgcaajaxi~Ax56x~nS2wh55dUDKcRvcVN72NJO2ka4doN5ckckOejW~WQJpOiJAjrhvC7EbQ__",
-    afterImg: "https://s3-alpha-sig.figma.com/img/df07/ce07/3fd779dba89545e807b28d76be6ffbbc?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lUCdEdc~cqXINQOdf1Xpuu0nKp9phif5dbJziuYubvgfis4mGhq47KqCG2z~wn8iMmK71r5GdkQeu02oJ8Y58r18FfJBgThmXlXxKbhkrn8Vco7wvrJiERnIOGJoDdD84b8QDLs4ZRI-5oflYCUqiDa-stlmJBE6p09p-wAj354vIkPLdBDaj3x8fZuCGvHtPPCWLy9-t0GdjmuHlpYiP09pAR8EZwyvk7sddgJIldBJu65D3tvkhnWcHa21bTVKXumnu0K~K7isb2bgcaajaxi~Ax56x~nS2wh55dUDKcRvcVN72NJO2ka4doN5ckckOejW~WQJpOiJAjrhvC7EbQ__",
+    beforeImg: "/images/modelStudio_before.png",
+    afterImg: "/images/modelStudio_after.png",
     link: "/tools?tool=Model%20Studio",
   },
   {

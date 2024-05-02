@@ -22,8 +22,6 @@ function Footer() {
         if (!email || !emailCheck) {
             return toast.error("Please enter a valid email address");
         }
-
-        try {
             toast.promise(
                 subscribeAPI({ email }),
                 {
@@ -32,10 +30,6 @@ function Footer() {
                     error: <b>Subscription failed. Please try again later.</b>,
                 }
             );
-        } catch (error) {
-            console.error("Error subscribing:", error);
-            toast.error("An unexpected error occurred. Please try again later.");
-        }
     }
 
     return (

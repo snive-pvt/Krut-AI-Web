@@ -14,8 +14,8 @@ import { useLocation } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
-  const location = useLocation(); 
-  
+  const location = useLocation();
+
   const dropdownRef = useRef(null);
 
   const toggleMenu = () => {
@@ -40,8 +40,8 @@ const Header = () => {
     };
   }, []);
 
-useEffect(() => {
-      window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, [location]);
 
   return (
@@ -59,24 +59,21 @@ useEffect(() => {
             <HiMenuAlt4 className="text-white text-3xl" onClick={toggleMenu} />
           </div>
 
+          {/* Mobile Header */}
           {isOpen && (
             <div
               ref={dropdownRef}
-              className="md:hidden z-50 absolute top-0 left-0 w-full bg-black p-4"
-            >
-              <div className="relative flex flex-col  mx-4 my-4 gap-4 py-5">
-                <Link
-                  to="/tools"
-                  className="text-white text-xl 2xl:text-2xl font-semibold"
-                >
-                  Tools
-                </Link>
+              className="md:hidden z-50 absolute top-0 left-0 w-full bg-black p-8 h-[100vh]">
+              <div className="relative flex flex-col  mx-4 my-4 gap-8 py-5">
+
+                <div className="flex items-center justify-end px-4 w-full text-white">
+                  <span class="material-symbols-outlined cursor-pointer" onClick={toggleMenu}> close </span>
+                </div>
+
+                <Link to="/tools" className="text-white text-2xl font-semibold"> Tools </Link>
+
                 <div className="relative group ">
-                  <Link
-                    to=""
-                    className="text-white text-xl 2xl:text-2xl font-semibold flex gap-5"
-                    onClick={toggleSupportMenu}
-                  >
+                  <Link to="" className="text-white text-2xl font-semibold flex gap-5" onClick={toggleSupportMenu} >
                     Support{" "}
                     {isSupportOpen ? (
                       <IoChevronUpOutline
@@ -92,43 +89,35 @@ useEffect(() => {
                   {isSupportOpen && (
                     <div className="w-full bg-black shadow-lg rounded-lg mt-2 mx-16">
 
-                      <Link
-                        to="/blogs"
-                        className="px-4 py-2  text-white flex gap-2"
-                      >
+                      <Link to="/blogs" className="px-4 py-2  text-white text-2xl flex gap-2" >
                         <CgFileDocument style={{ marginTop: '3px' }} /> Blog
                       </Link>
+
                       {/* <Link
                         to="/tutorials"
                         className=" px-4 py-2  text-white flex gap-2"
                       >
                         <MdCastForEducation style={{marginTop:'3px'}}/> Tutorials
                       </Link> */}
-                      <Link
-                        to="/contact"
-                        className=" px-4 py-2 text-white flex gap-2"
-                      >
+
+                      <Link to="/contact" className=" px-4 py-2 text-white text-2xl flex gap-2" >
                         <MdOutgoingMail style={{ marginTop: '3px' }} /> Contact
                       </Link>
                     </div>
                   )}
                 </div>
-                <Link
-                  to="/"
-                  className="text-white text-xl 2xl:text-2xl font-semibold"
-                >
+                <Link to="/" className="text-white text-2xl font-semibold" >
                   Community
                 </Link>
-                <Link
-                  to="/pricing"
-                  className="text-white text-xl 2xl:text-2xl font-semibold"
-                >
+                <Link to="/pricing" className="text-white text-2xl font-semibold" >
                   Pricing
                 </Link>
               </div>
             </div>
           )}
 
+
+          {/* Large display Header */}
           <div className="header-items hidden md:flex  lg:gap-16 md:gap-10 mt-2">
             <Link
               to="/tools"

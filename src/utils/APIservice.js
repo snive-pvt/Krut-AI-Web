@@ -19,6 +19,7 @@ export const subscribeAPI = async (data) => {
 
     } catch (error) {
         console.log(error.message);
+        throw Error(error.message);
     }
 }
 
@@ -26,15 +27,14 @@ export const subscribeAPI = async (data) => {
 export const contactAPI = async (data) => {
     try {
         const url = API_END_POINT + supportEndPoint?.contact?.url;
-
         const response = await axios.post(url, data);
         if (response?.data) {
             return response.data;
         } else {
-            throw Error("Unable to get response")
+            throw new Error("Unable to get response");
         }
-
     } catch (error) {
         console.log(error.message);
+        throw Error(error.message);
     }
-}
+};
