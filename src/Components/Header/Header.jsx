@@ -16,6 +16,7 @@ const Header = () => {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const location = useLocation();
 
+  const supportMenu = useRef(null);
   const dropdownRef = useRef(null);
 
   const toggleMenu = () => {
@@ -28,6 +29,10 @@ const Header = () => {
 
   const closeMenu = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      setIsOpen(false);
+      setIsSupportOpen(false);
+    }
+    if (supportMenu.current && !supportMenu.current.contains(e.target)) {
       setIsOpen(false);
       setIsSupportOpen(false);
     }
@@ -125,17 +130,18 @@ const Header = () => {
             >
               <span>Tools</span>
             </Link>
+          
             <div className="relative group">
               <Link
                 to=""
                 className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl"
-                onMouseEnter={() => {
-                  setIsOpen(true);
+                onClick={() => {
+                  setIsSupportOpen(true);
                 }}
               >
                 Support
               </Link>
-              <div className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2 hidden group-hover:block">
+             {isSupportOpen && <div ref={supportMenu} className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2">
                 <Link to="/blogs" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
                     <div className="text-4xl">
@@ -177,7 +183,7 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-              </div>
+              </div>}
             </div>
 
             <Link
