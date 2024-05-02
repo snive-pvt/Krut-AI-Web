@@ -66,7 +66,7 @@ function ToolSlider({ beforeImg, afterImg }) {
             className="w-full accent-white border-gray-300 cursor-ew-resize relative h-[50px]"
             style={{
               borderRadius: '30px', // Set border radius to half of the height for a circular slider
-              background: 'linear-gradient(to right, #00D4EF 0%, #FFF calc((var(--range-value) - 1)*1%), rgba(0, 0, 0, 0.3) calc(var(--range-value) * 1%), rgba(0, 0, 0, 0.3) 100%)',
+              background: 'linear-gradient(to right, #00D4EF 0%, #FFF calc((var(--range-value) - 1)*1%), rgba(0, 0, 0, 0.1) calc(var(--range-value) * 1%), rgba(0, 0, 0, 0.1) 100%)',
               outline: 'white solid 2px', // Set white outline
               appearance: 'none', // Remove default styles
               '--range-value': slideValue // Set custom property for the current value
