@@ -14,6 +14,7 @@ import mongodb from "../../assets/Images/mongodb.png";
 import StartupInida from "../../assets/Images/startupIndia.png";
 import Footer from "../../Components/Footer/Footer";
 import PromoVideo from "../../assets/Images/Render Last 720.mp4";
+import BlogsList from "../../Components/Blogs/BlogsList";
 
 const Home = () => {
   return (
@@ -204,6 +205,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <BlogsList isExtended={false}/>
 
       <div
         className="min-h-[50rem] bg-center bg-cover bg-no-repeat bg-opacity-30 "
