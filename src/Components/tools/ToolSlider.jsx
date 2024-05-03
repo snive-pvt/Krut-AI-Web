@@ -21,18 +21,18 @@ function ToolSlider({ beforeImg, afterImg }) {
       <div className="flex items-center justify-center ">
 
         <div className="relative">
-          <img className="w-[40vw] h-[50vw] lg:h-[50vh] rounded-l-3xl relative -z-10 left-6 object-cover border border-krutNeon" src={beforeImg} />
+          <img className="w-[40vw] h-[40vw] rounded-l-3xl relative -z-10 left-6 object-cover border border-krutNeon" src={beforeImg} />
         </div>
 
 
         {isClicked && (
           <img
-            className="w-[40vw] h-[50vw] lg:h-[50vh] bg-white rounded-3xl object-cover border border-krutNeon"
+            className="w-[40vw] h-[40vw] bg-white rounded-3xl object-cover border border-krutNeon"
             src={afterImg} alt="Processed Image" />
         )}
 
         {isClicked == false && (
-          <div className="w-[40vw] h-[50vw] lg:h-[50vh] bg-white rounded-3xl border border-krutNeon" ></div>
+          <div className="w-[40vw] h-[40vw] bg-white rounded-3xl border border-krutNeon" ></div>
         )}
       </div>
 
