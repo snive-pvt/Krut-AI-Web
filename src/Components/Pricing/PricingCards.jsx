@@ -10,7 +10,7 @@ function PricingCards({ isMonthly, isExpanded }) {
     return (
         <>
             {/* ======== Pricing Cards ========= */}
-            <div className="w-full">
+            <div className={`w-full ${isExpanded? "block" : "hidden xl:block"}`}>
                 <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-evenly overflow-hidden">
                     {pricingTable && pricingTable.map((list, index) =>
 
@@ -34,7 +34,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
                                 <br />
 
-                                <div className="h-16 mb-3">
+                                <div className="hidden xl:block h-16 mb-3">
                                     <div className="flex items-center justify-center h-full relative">
                                         {list?.title !== "Free" && <div className="w-[75%]">
 
