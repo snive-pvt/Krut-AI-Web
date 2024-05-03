@@ -40,7 +40,7 @@ export const pricingTable = [
 export const comparisonTable = [
     {
         title: "Free",
-        "Storage": 5,
+        "Storage": "5 GB",
         "iStock Quota": "Not Included",
         "Watermark": "Included",
         "Clean Anything": "Not Included",
@@ -59,7 +59,7 @@ export const comparisonTable = [
     },
     {
         title: "Plus",
-        "Storage": 50,
+        "Storage": "50 GB",
         "iStock Quota": "Unlimited",
         "Watermark": "Not Included",
         "Clean Anything": "Included",
@@ -78,7 +78,7 @@ export const comparisonTable = [
     },
     {
         title: "Pro",
-        "Storage": 200,
+        "Storage": "200 GB",
         "iStock Quota": "Unlimited",
         "Watermark": "Not Included",
         "Clean Anything": "Included",
@@ -100,21 +100,21 @@ export const comparisonTable = [
 export const comparisonTableDemo = [
     {
         title: "Free",
-        "Storage": 5,
+        "Storage": "5 GB",
         "iStock Quota": "Not Included",
         "Watermark": "Included",
         "Clean Anything": "Not Included",
     },
     {
         title: "Plus",
-        "Storage": 50,
+        "Storage": "50 GB",
         "iStock Quota": "Unlimited",
         "Watermark": "Not Included",
         "Clean Anything": "Included",
     },
     {
         title: "Pro",
-        "Storage": 200,
+        "Storage": "200 GB",
         "iStock Quota": "Unlimited",
         "Watermark": "Not Included",
         "Clean Anything": "Included",
