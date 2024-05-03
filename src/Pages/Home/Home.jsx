@@ -14,6 +14,7 @@ import mongodb from "../../assets/Images/mongodb.png";
 import StartupInida from "../../assets/Images/startupIndia.png";
 import Footer from "../../Components/Footer/Footer";
 import PromoVideo from "../../assets/Images/Render Last 720.mp4";
+import BlogsList from "../../Components/Blogs/BlogsList";
 
 const Home = () => {
   return (
@@ -67,7 +68,7 @@ const Home = () => {
                   "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
               }}
             >
-              Try Krut AI
+              Try Krut AI <span className="text-base">(Beta)</span>
             </div>
            </Link>
 
@@ -204,6 +205,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <BlogsList isExtended={false}/>
 
       <div
         className="min-h-[50rem] bg-center bg-cover bg-no-repeat bg-opacity-30 "

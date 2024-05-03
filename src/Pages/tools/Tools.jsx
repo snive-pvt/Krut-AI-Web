@@ -44,7 +44,7 @@ const Tools = () => {
                 "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
             }}
           >
-            Try Krut AI
+            Try Krut AI <span className="text-base">(Beta)</span>
           </div>
         </Link>
       </div>

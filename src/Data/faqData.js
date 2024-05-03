@@ -22,7 +22,7 @@ export const faqData = {
       {
         question: "What are the disadvantages of upscaling?",
         answer:
-          "OpWhile there are cons of image upscaling like Loss of quality, limited effectiveness, and a restriction of file size, Krut.Ai's Image Upscaler helps you overcome them so there are near to zero disadvantages of upscaling.",
+          "While there are cons of image upscaling like Loss of quality, limited effectiveness, and a restriction of file size, Krut.Ai's Image Upscaler helps you overcome them so there are near to zero disadvantages of upscaling.",
       },
       {
         question: "What is the better alternative for generative fill?         ",

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../Components/Header/Header";
-import BlogsCard from "../../Components/BlogsCard/BlogsCard";
 import GetStarted from "../../Components/GetStarted/GetStarted"
 import Footer from "../../Components/Footer/Footer";
+import { BlogsData } from "../../Data/BlogsData";
+import { useNavigate } from "react-router-dom";
+import BlogsList from "../../Components/Blogs/BlogsList";
 
 const Blogs = () => {
   const linearGreenBackground = {
@@ -12,6 +14,9 @@ const Blogs = () => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   };
+
+  const [blogs] = useState(BlogsData.sort((a, b) => b.id - a.id));
+  const Navigate = useNavigate();
 
 
   return (
@@ -35,11 +40,9 @@ const Blogs = () => {
           <div className="min-h-[220px] md:min-h-[240px] xl:min-h-[340px] 2xl:min-h-[440px] xl:mx-20 2xl:mx-40 border border-krutNeon rounded-2xl 2xl:rounded-3xl mx-4 md:mx-12 mt-16 mb-4 flex">
 
             <div className="p-4 bg-white text-black min-h-[200px] w-3/5 lg:w-[55%] rounded-2xl 2xl:rounded-3xl">
-              <h1 className="mx-2 lg:mx-8 font-bold xl:font-black py-2 lg:pt-4 xl:py-8 sm:text-xl xl:text-4xl 2xl:text-5xl  ">Inside AI Art</h1>
+              <h1 className="mx-2 lg:mx-8 font-bold xl:font-black py-2 lg:pt-4 xl:py-8 sm:text-xl xl:text-4xl 2xl:text-5xl">{blogs[0].title}</h1>
               <p className="mt-2 lg:mt-2 mx-2 lg:mx-8 text-xs sm:text-xs  2xl:text-base lg:font-normal">
-              Artificial intelligence (AI) is the science of creating machines that can think and do things like humans, such as recognize patterns, make decisions, and judge. 
-              AI uses computers and machines to mimic the human mind's ability to solve problems and make decisions. 
-              It combines computer science and large datasets to enable problem-solving. 
+                {blogs[0].titleIntro}
               </p>
             </div>
 
@@ -48,29 +51,23 @@ const Blogs = () => {
               <h1 className="text-white font-semibold text-center  sm:text-lg md:text-xl lg:text-5xl xl:text-7xl  2xl:text-8xl xl:font-bold ">
                 Recent Post
               </h1>
-              <button className="border lg:border-2  border-krutNeon text-white text-[10px] sm:text-sm lg:text-lg 2xl:text-2xl rounded-lg lg:rounded-full px-2 lg:px-8 lg:font-medium py-1  mt-2">
+              <button className="border lg:border-2  border-krutNeon text-white text-[10px] sm:text-sm lg:text-lg 2xl:text-2xl rounded-lg lg:rounded-full px-2 lg:px-8 lg:font-medium py-1  mt-2"
+                onClick={() => Navigate(`/blog?id=${blogs.length}`)}
+              >
                 Read more
-              </button> 
+              </button>
             </div>
 
           </div>
 
-         
+
         </div>
-         {/* blogsCard */}
-           
-         <div className=" xl:mx-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3   my-20">
-  <BlogsCard />
-  <BlogsCard />
-  <BlogsCard />
-  <BlogsCard  />
-  <BlogsCard />
-  <BlogsCard  />
-</div>
 
-     <GetStarted />
+        <BlogsList isExtended={true}/>
 
-     <Footer />
+        <GetStarted />
+
+        <Footer />
 
       </div>
     </>
