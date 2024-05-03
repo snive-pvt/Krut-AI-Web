@@ -24,7 +24,10 @@ const Blog = () => {
                 <div className='hidden md:block md:min-h-screen  md:mx-28 lg:min-h-screen md:py-4 lg:mx-48 xl:mx-64 lg:py-4 xl:py-10'>
                     <div className='xl:min-h-[10rem] lg:min-h-[7rem] flex flex-col items-center justify-center'>
                         <p className='text-krutNeon font-bold md:text-sm lg:text-xl'>{blogData.genre}</p>
-                        <h1 className='text-white md:text-[28px] lg:text-[36px] xl:text-[46px] 2xl:text-[56px] font-bold mt-2'>{blogData.title}</h1>
+                        {/* md:text-[28px] lg:text-[36px] xl:text-[46px] 2xl:text-[56px]  */}
+                        <h1 className='text-white 
+                        text-[3.5rem] text-center
+                        font-bold mt-2'>{blogData.title}</h1>
                     </div>
 
                     <div className=' lg:min-h-[25rem]  xl:mt-12 md:py-8 lg:py-10  flex items-center justify-center'>
@@ -91,9 +94,9 @@ const Blog = () => {
                 {/* ========= Mobile mode ============*/}
 
                 <div className='block md:hidden min-h-screen '>
-                    <div className='min-h-[8rem]  flex flex-col justify-center items-center mx-[20px] text-center'>
+                    <div className='min-h-[8rem]  flex flex-col justify-center items-center mx-[20px] text-center mt-5'>
                         <h4 className='text-krutNeon font-bold'>{blogData.genre}</h4>
-                        <h1 className='text-white font-bold text-[25px]'>{blogData.title}</h1>
+                        <h1 className='text-white font-bold text-[2rem]'>{blogData.title}</h1>
                     </div>
                     <div className='min-h-[5rem] bg-black flex items-center'>
                         <div className='flex mx-[20px] sm:mx-auto'>

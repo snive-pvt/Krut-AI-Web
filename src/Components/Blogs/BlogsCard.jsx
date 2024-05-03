@@ -9,8 +9,7 @@ const BlogsCard = ({blog}) => {
       <img
         src={blog?.titleImg}
         alt={blog?.title}
-        className='h-[16rem] xl:l 2xl:h-[24rem] w-full object-fill rounded-[1rem]'
-      />
+        className='h-[16rem] xl:l 2xl:h-[24rem] w-full rounded-[1rem] object-cover'/>
       
     
       <div className="absolute bottom-0 left-0 p-3 w-full h-[8rem] lg:h-[10rem] 2xl:h-[12rem]  bg-white  rounded-b-3xl">
