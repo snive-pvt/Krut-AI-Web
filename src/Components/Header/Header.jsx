@@ -111,7 +111,7 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-                <Link to="/" className="text-white text-2xl font-semibold" >
+                <Link to="https://discord.gg/vf2jJxEVn7" className="text-white text-2xl font-semibold" >
                   Community
                 </Link>
                 <Link to="/pricing" className="text-white text-2xl font-semibold" >
@@ -130,7 +130,7 @@ const Header = () => {
             >
               <span>Tools</span>
             </Link>
-          
+
             <div className="relative group">
               <Link
                 to=""
@@ -141,7 +141,7 @@ const Header = () => {
               >
                 Support
               </Link>
-             {isSupportOpen && <div ref={supportMenu} className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2">
+              {isSupportOpen && <div ref={supportMenu} className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2">
                 <Link to="/blogs" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
                     <div className="text-4xl">
@@ -183,31 +183,25 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
+
               </div>}
             </div>
 
-            <Link
-              to="/"
-              className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl"
-            >
+            <Link to="https://discord.gg/vf2jJxEVn7" className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl" >
               <span>Community</span>
             </Link>
-            <Link
-              to="/pricing"
-              className="text-white  md:text-sm lg:text-xl 2xl:text-2xl"
-            >
+
+            <Link to="/pricing" className="text-white  md:text-sm lg:text-xl 2xl:text-2xl" >
               <span>Pricing</span>
             </Link>
           </div>
 
-          <Link
-            to="/contact"
+          <Link to="/contact"
             className="hidden md:block  rounded-full text-black font-bold md:text-lg lg:text-xl 2xl:text-2xl md:px-5 md:py-1 lg:px-7 lg:py-2 2xl:px-9 2xl:py-4"
             style={{
               background:
                 "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
-            }}
-          >
+            }}>
             Book a Demo
           </Link>
         </div>

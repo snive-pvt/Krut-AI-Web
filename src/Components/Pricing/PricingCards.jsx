@@ -84,7 +84,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
                                 <div className="flex items-center justify-center">
 
-                                    <button className="text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
+                                    <button className="zoomEffect text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
                                     onClick={()=>Navigate('/contact')}
                                     style={{
                                         backgroundImage: list?.title === "Pro" ?
@@ -113,7 +113,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
             {isExpanded && <div className="flex justify-center items-center my-10">
                 <a href="#CompareChart" >
-                    <button className='text-white text-xl rounded-3xl border border-krutNeon py-1.5 px-10'>Compare</button>
+                    <button className='text-white text-xl rounded-3xl border border-krutNeon hover:bg-krutNeon hover:text-black zoomEffect py-1.5 px-10'>Compare</button>
                 </a>
             </div>}
         </>

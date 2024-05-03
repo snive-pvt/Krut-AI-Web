@@ -52,7 +52,7 @@ function TalkToUsComponent() {
                             </div>
                         </div>
                         <div className="lg:w-full lg:flex lg:justify-end lg:mt-44"> {/* Change: Added justify-end */}
-                            <button className='max-w-[200px] bg-white text-xl rounded-3xl mb-5 mt-8 py-1.5 px-10 font-semibold cursor-pointer'
+                            <button className='max-w-[200px] bg-white text-xl rounded-3xl mb-5 mt-8 py-1.5 px-10 font-semibold cursor-pointer zoomEffect'
                             onClick={()=>Navigate("/contact")}>
                                 Talk to Us
                             </button>

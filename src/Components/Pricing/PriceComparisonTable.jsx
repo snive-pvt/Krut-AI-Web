@@ -96,7 +96,7 @@ function PriceComparisonTable() {
                 </table>
             </div>
             <div className="w-full flex justify-center relative -mt-6">
-                <button className='bg-white rounded-full border h-12 w-12 flex justify-center items-center'
+                <button className='bg-white rounded-full border h-12 w-12 flex justify-center items-center hover:bg-krutNeon zoomEffect'
                     onClick={setPricingExpandView}
                 >
                     <span className={`material-symbols-outlined ${isPricingExpanded ? "rotate-180" : ""}`}>  expand_more </span>
