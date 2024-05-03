@@ -10,13 +10,14 @@ import { contactAPI } from '../../utils/APIservice';
 
 const Contact = () => {
   // State for input fields
+  // const [reference, setReference] = useState("");
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phoneNumber: '',
     message: '',
-    subject: '_',
+    subject: '',
   });
 
   // Handler for input change
@@ -28,6 +29,16 @@ const Contact = () => {
     }));
   };
 
+  // const setReferredby = (e) => {
+  //   const { name, value } = e.target;
+  //   if (value === "Others") {
+  //     setReference("Others");
+  //   } else {
+  //     setReference("");
+  //   }
+  // };
+  
+
   // Validation function for email using regex
   function isValidEmail(inputEmail) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -37,10 +48,14 @@ const Contact = () => {
   // Handler for form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(formData); //test
+    console.log(formData); //test
 
-    if (!formData?.email?.trimEnd()?.length || !formData?.firstName?.trimEnd()?.length || !formData?.lastName?.trimEnd()?.length || !formData?.phoneNumber?.trimEnd()?.length || !formData?.message?.trimEnd()?.length) {
+    if (!formData?.email?.trimEnd()?.length || !formData?.firstName?.trimEnd()?.length || !formData?.lastName?.trimEnd()?.length || !formData?.phoneNumber?.trimEnd()?.length || !formData?.subject?.trimEnd()?.length) {
       return toast.error("Please enter all fields");
+    }
+
+    if (formData?.message?.trimEnd()?.length < 10) {
+      return toast.error("Please enter a message with at least 10 characters");
     }
 
     const emailCheck = isValidEmail(formData?.email?.trimEnd());
@@ -98,6 +113,24 @@ const Contact = () => {
                     <label htmlFor="message" className='text-xs 2xl:text-sm font-medium'>Message</label>
                     <input id='message' name='message' value={formData.message} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Message' />
                   </div>
+                  <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
+                    <label htmlFor="subject" className='text-xs 2xl:text-sm font-medium'>How did you hear about us?</label>
+                    <select id='subject' name='subject' value={formData.subject} aria-valuenow={formData.subject} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Facebook, instagram, twitter'>
+                      <option value="LinkedIn">LinkedIn</option>
+                      <option value="Discord">Discord</option>
+                      <option value="Twitter">Twitter</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="Facebook">Facebook</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+
+                  {/* {reference === "Others" &&
+                    <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
+                      <label htmlFor="reference2" className='text-xs 2xl:text-sm font-medium'>Others, Please Specify</label>
+                      <input id='reference2' name='reference2' value={formData.subject} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Message' />
+                    </div>
+                  } */}
                 </div>
               </div>
               <div>
