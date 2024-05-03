@@ -27,7 +27,7 @@ const cardData = [
   },
   {
     title: "Model Studio",
-    description: "Optimize your ads with human model images,saving cost & time",
+    description: "Optimize your ads with human model images, saving cost & time",
     gif: ModelStudio,
     thumbnail: ModelStudiotn,
     video: ModelStudio,

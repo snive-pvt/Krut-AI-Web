@@ -48,7 +48,7 @@ const Home = () => {
               <p className="md:hidden text-white text-center  2xl:text-3xl mx-4 lg:text-lg xl:text-xl">
                 Acquire the tools necessary for designing ads, banners, websites
                 and more, all with the click of button which saves
-                cost,increases efficiency and accuracy at minimal cost.
+                cost, increases efficiency and accuracy at minimal cost.
               </p>
               {/* <p className="md:hidden text-white text-center 2xl:text-3xl xl:text-xl mx-auto">click of a button</p> */}
 
