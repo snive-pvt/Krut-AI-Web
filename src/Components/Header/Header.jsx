@@ -33,8 +33,8 @@ const Header = () => {
       setIsSupportOpen(false);
     }
     if (supportMenu.current && !supportMenu.current.contains(e.target)) {
-      setIsOpen(false);
-      setIsSupportOpen(false);
+      // setIsOpen(false);
+      // setIsSupportOpen(false);
     }
   };
 
@@ -94,7 +94,7 @@ const Header = () => {
                   {isSupportOpen && (
                     <div className="w-full bg-black shadow-lg rounded-lg mt-2 mx-16">
 
-                      <Link to="/blogs" className="px-4 py-2  text-white text-2xl flex gap-2" >
+                      <Link to="/blogs" className="px-4 py-2 pb-4  text-white text-2xl flex gap-2" >
                         <CgFileDocument style={{ marginTop: '3px' }} /> Blog
                       </Link>
 
@@ -132,15 +132,14 @@ const Header = () => {
             </Link>
 
             <div className="relative group">
-              <Link
-                to=""
-                className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl"
+
+              <div className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl"
                 onClick={() => {
                   setIsSupportOpen(true);
-                }}
-              >
+                }} >
                 Support
-              </Link>
+              </div>
+
               {isSupportOpen && <div ref={supportMenu} className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2">
                 <Link to="/blogs" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
