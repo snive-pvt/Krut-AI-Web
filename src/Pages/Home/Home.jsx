@@ -61,7 +61,7 @@ const Home = () => {
 
            <Link to='/contact'>
            <div
-              className="sec-one-button  text-black rounded-full px-8 py-1 mt-16 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
+              className="sec-one-button zoomEffect text-black rounded-full px-8 py-1 mt-16 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
               style={{
                 background:
                   "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
@@ -195,9 +195,9 @@ const Home = () => {
               creators and discuss your ideas on our{" "}
               <span className="font-bold">Discord server</span>
             </h4>
-            <Link to={"/"}>
+            <Link to={"https://discord.gg/vf2jJxEVn7"}>
               {" "}
-              <div className="mt-7 bg-black w-[11rem] md:w-[13rem] text-white md:py-3 px-4 py-2 md:px-2 rounded-full text-xl md:text-2xl font-semibold ">
+              <div className="mt-7 bg-black w-[11rem] md:w-[13rem] text-white md:py-3 px-4 py-2 md:px-2 rounded-full text-xl md:text-2xl font-semibold zoomEffect">
                 Join Discord
               </div>
             </Link>
@@ -302,7 +302,7 @@ const Home = () => {
           <Link to='/pricing'>
           <div className="flex items-center justify-center text-black mt-10 mb-10">
             <div
-              className=" rounded-[2rem] w-[2/5] py-2 mx-10 text-xl font-bold flex justify-center px-10"
+              className=" rounded-[2rem] w-[2/5] py-2 mx-10 text-xl font-bold flex justify-center px-10 zoomEffect"
               style={{
                 background:
                   "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",

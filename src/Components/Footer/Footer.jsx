@@ -113,17 +113,17 @@ function Footer() {
                 <div className="py-5 w-full px-3 ">
                     <div className="flex justify-center items-center">
                         <div className="flex space-x-12 md:space-x-5">
-                            <a href="http://discord.com" target="_blank">
-                                <img className='h-8' src="/icons/discord.png" alt="discord" />
+                            <a href="https://discord.gg/vf2jJxEVn7" target="_blank">
+                                <img className='h-8 zoomEffect' src="/icons/discord.png" alt="discord" />
                             </a>
                             <a href="https://www.linkedin.com/company/krut-ai/?viewAsMember=true" target="_blank">
-                                <img className='h-8' src="/icons/linkedIn.png" alt="linkedIn" />
+                                <img className='h-8 zoomEffect' src="/icons/linkedIn.png" alt="linkedIn" />
                             </a>
                             <a href="https://www.instagram.com/_krut.ai/" target="_blank">
-                                <img className='h-8' src="/icons/instagram.png" alt="instagram" />
+                                <img className='h-8 zoomEffect' src="/icons/instagram.png" alt="instagram" />
                             </a>
                             <a href="https://twitter.com/krutAI_" target="_blank">
-                                <img className='h-8' src="/icons/x.png" alt="x" />
+                                <img className='h-8 zoomEffect' src="/icons/x.png" alt="x" />
                             </a>
                         </div>
                     </div>

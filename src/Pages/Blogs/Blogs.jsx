@@ -25,22 +25,21 @@ const Blogs = () => {
 
 
         <div className="my-10 2xl:my-16">
-          <h1 className="text-white text-3xl sm:text-4xl xl:text-7xl 2xl:text-8xl text-center font-bold">
+          <h1 className="text-white text-3xl sm:text-5xl xl:text-7xl 2xl:text-8xl text-center font-bold">
             Blogs
           </h1>
-          <p className="mt-8 mx-2 sm:mx-4 text-xl text-center xl:text-xs 2xl:text-lg 2xl:font-normal text-white xl:font-light">
+          <p className="mt-8 mx-2 sm:mx-4 text-sm px-8 text-center xl:text-base 2xl:text-lg 2xl:font-normal text-white xl:font-light">
             Get Valuable insights,practical tips,and thought-provoking analyses to keep you informed and inspired.
           </p>
 
           <div className="min-h-[220px] md:min-h-[240px] xl:min-h-[340px] 2xl:min-h-[440px] xl:mx-20 2xl:mx-40 border border-krutNeon rounded-2xl 2xl:rounded-3xl mx-4 md:mx-12 mt-16 mb-4 flex">
 
-            <div className="bg-white text-black min-h-[200px] w-3/5 lg:w-[55%] rounded-2xl 2xl:rounded-3xl">
+            <div className="p-4 bg-white text-black min-h-[200px] w-3/5 lg:w-[55%] rounded-2xl 2xl:rounded-3xl">
               <h1 className="mx-2 lg:mx-8 font-bold xl:font-black py-2 lg:pt-4 xl:py-8 sm:text-xl xl:text-4xl 2xl:text-5xl  ">Inside AI Art</h1>
-              <p className="mt-2 lg:mt-2 mx-2 lg:mx-8 text-xs sm:text-xs  2xl:text-base lg:font-medium">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Temporibus vitae voluptas doloribus eveniet rerum deserunt s
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed iure quibusdam delectus recusandae i
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed iure quibusdam delectus recusandae i
+              <p className="mt-2 lg:mt-2 mx-2 lg:mx-8 text-xs sm:text-xs  2xl:text-base lg:font-normal">
+              Artificial intelligence (AI) is the science of creating machines that can think and do things like humans, such as recognize patterns, make decisions, and judge. 
+              AI uses computers and machines to mimic the human mind's ability to solve problems and make decisions. 
+              It combines computer science and large datasets to enable problem-solving. 
               </p>
             </div>
 

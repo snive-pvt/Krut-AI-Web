@@ -21,8 +21,8 @@ const cardData = [
     gif: ProductStudio,
     thumbnail: ProductStudiotn,
     video: ProductStudio,
-    beforeImg: "/images/productStudio_before.png",
-    afterImg: "/images/productStudio_after.png",
+    beforeImg: "/images/productStudio_before.webp",
+    afterImg: "/images/productStudio_after.webp",
     link: "/tools?tool=Product%20Studio",
   },
   {
@@ -31,8 +31,8 @@ const cardData = [
     gif: ModelStudio,
     thumbnail: ModelStudiotn,
     video: ModelStudio,
-    beforeImg: "/images/modelStudio_before.png",
-    afterImg: "/images/modelStudio_after.png",
+    beforeImg: "/images/modelStudio_before.webp",
+    afterImg: "/images/modelStudio_after.webp",
     link: "/tools?tool=Model%20Studio",
   },
   {
@@ -41,8 +41,8 @@ const cardData = [
     gif: BgRemove,
     thumbnail: BrRemovetn,
     video: BgRemove,
-    beforeImg: "/images/bgRemove_before.png",
-    afterImg: "/images/bgRemove_after.png",
+    beforeImg: "/images/bgRemove_before.webp",
+    afterImg: "/images/bgRemove_after.webp",
     link: "/tools?tool=Background%20remover",
   },
   {
@@ -51,8 +51,8 @@ const cardData = [
     gif: Upscaler,
     thumbnail: Upscalertn,
     video: Upscaler,
-    beforeImg: "/images/upscaler_before.png",
-    afterImg: "/images/upscaler_after.png",
+    beforeImg: "/images/upscaler_before.webp",
+    afterImg: "/images/upscaler_after.webp",
     link: "/tools?tool=Upscaler",
   },
   {
@@ -61,8 +61,8 @@ const cardData = [
     gif: MagicRemove,
     thumbnail: MagivRemovetn,
     video: MagicRemove,
-    beforeImg: "/images/remove_before.png",
-    afterImg: "/images/remove_after.png",
+    beforeImg: "/images/remove_before.webp",
+    afterImg: "/images/remove_after.webp",
     link: "/tools?tool=Magic%20Remove",
   },
   {
@@ -71,8 +71,8 @@ const cardData = [
     gif: MagicReplace,
     thumbnail: MagicReplacetn,
     video: MagicReplace,
-    beforeImg: "/images/replace_before.png",
-    afterImg: "/images/replace_after.png",
+    beforeImg: "/images/replace_before.webp",
+    afterImg: "/images/replace_after.webp",
     link: "/tools?tool=Magic%20Replace",
   },
   {
@@ -81,8 +81,8 @@ const cardData = [
     gif: Outpaint,
     thumbnail: Outpainttn,
     video: Outpaint,
-    beforeImg: "/images/autofill_before.jpg",
-    afterImg: "/images/autofill_after.png",
+    beforeImg: "/images/autofill_before.webp",
+    afterImg: "/images/autofill_after.webp",
     link: "/tools?tool=Autofill",
   },
   {
@@ -95,7 +95,6 @@ const cardData = [
     afterImg: "https://s3-alpha-sig.figma.com/img/df07/ce07/3fd779dba89545e807b28d76be6ffbbc?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lUCdEdc~cqXINQOdf1Xpuu0nKp9phif5dbJziuYubvgfis4mGhq47KqCG2z~wn8iMmK71r5GdkQeu02oJ8Y58r18FfJBgThmXlXxKbhkrn8Vco7wvrJiERnIOGJoDdD84b8QDLs4ZRI-5oflYCUqiDa-stlmJBE6p09p-wAj354vIkPLdBDaj3x8fZuCGvHtPPCWLy9-t0GdjmuHlpYiP09pAR8EZwyvk7sddgJIldBJu65D3tvkhnWcHa21bTVKXumnu0K~K7isb2bgcaajaxi~Ax56x~nS2wh55dUDKcRvcVN72NJO2ka4doN5ckckOejW~WQJpOiJAjrhvC7EbQ__",
     link: "/tools?tool=Virtual%20Try-On",
   },
-
 ];
 
 

@@ -13,4 +13,10 @@ body {
 
 }
 
+.zoomEffect{
+  transition: transform 0.3s ease;
+}
+.zoomEffect:hover{
+  transform:scale(1.07);
+}
 

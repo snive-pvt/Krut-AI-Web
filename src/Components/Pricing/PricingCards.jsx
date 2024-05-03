@@ -10,7 +10,7 @@ function PricingCards({ isMonthly, isExpanded }) {
     return (
         <>
             {/* ======== Pricing Cards ========= */}
-            <div className="w-full">
+            <div className={`w-full ${isExpanded? "block" : "hidden xl:block"}`}>
                 <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-evenly overflow-hidden">
                     {pricingTable && pricingTable.map((list, index) =>
 
@@ -34,7 +34,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
                                 <br />
 
-                                <div className="h-16 mb-3">
+                                <div className="hidden xl:block h-16 mb-3">
                                     <div className="flex items-center justify-center h-full relative">
                                         {list?.title !== "Free" && <div className="w-[75%]">
 
@@ -84,7 +84,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
                                 <div className="flex items-center justify-center">
 
-                                    <button className="text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
+                                    <button className="zoomEffect text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
                                     onClick={()=>Navigate('/contact')}
                                     style={{
                                         backgroundImage: list?.title === "Pro" ?
@@ -113,7 +113,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
             {isExpanded && <div className="flex justify-center items-center my-10">
                 <a href="#CompareChart" >
-                    <button className='text-white text-xl rounded-3xl border border-krutNeon py-1.5 px-10'>Compare</button>
+                    <button className='text-white text-xl rounded-3xl border border-krutNeon hover:bg-krutNeon hover:text-black zoomEffect py-1.5 px-10'>Compare</button>
                 </a>
             </div>}
         </>
