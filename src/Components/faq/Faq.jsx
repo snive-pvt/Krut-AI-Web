@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Faq = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState(null);
+  const Navigate = useNavigate();
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -19,18 +21,16 @@ const Faq = ({ faqs }) => {
             faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`mb-4 rounded-md border overflow-hidden ${
-                  openIndex === index ? "border" : ""
-                }`}
+                className={`mb-4 rounded-md border overflow-hidden ${openIndex === index ? "border" : ""
+                  }`}
               >
                 <div
                   className="w-full flex items-center justify-between cursor-pointer p-4"
                   onClick={() => handleToggle(index)}
                 >
                   <h2
-                    className={`text-lg text-white md:text-xl font-bold ${
-                      openIndex === index ? "text-white" : ""
-                    }`}
+                    className={`text-lg text-white md:text-xl font-bold ${openIndex === index ? "text-white" : ""
+                      }`}
                   >
                     {faq.question}
                   </h2>
@@ -79,7 +79,13 @@ const Faq = ({ faqs }) => {
                 )}
               </div>
             ))}
+
         </div>
+      </div>
+      <div className="text-white">
+        <p>Cant find what your're looking for?
+          <span onClick={()=> Navigate("/contact")} className="text-krutNeon font-bold cursor-pointer"> Contact our Support</span>
+        </p>
       </div>
     </div>
   );

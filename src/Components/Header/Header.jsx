@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Images/image_prev_ui (2).png";
 import { HiMenuAlt4 } from "react-icons/hi";
-import { BiMailSend } from "react-icons/bi";
-import { MdCastForEducation } from "react-icons/md";
+// import { BiMailSend } from "react-icons/bi";
+// import { MdCastForEducation } from "react-icons/md";
 import { MdOutgoingMail } from "react-icons/md";
 import { CgFileDocument } from "react-icons/cg";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
@@ -133,14 +133,13 @@ const Header = () => {
 
             <div className="relative group">
 
-              <div className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl"
-                onClick={() => {
-                  setIsSupportOpen(true);
-                }} >
+              <div className="text-white md:text-sm  lg:text-xl 2xl:text-2xl cursor-pointer"
+                onMouseEnter={toggleSupportMenu} >
                 Support
               </div>
 
-              {isSupportOpen && <div ref={supportMenu} className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2">
+              {isSupportOpen && <div ref={supportMenu} className="border border-cyan-100 absolute top-full  lg:ml-[-60px] w-[16rem] bg-black shadow-lg rounded-lg mt-2"
+               onMouseLeave={toggleSupportMenu} >
                 <Link to="/blogs" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
                     <div className="text-4xl">
@@ -186,9 +185,9 @@ const Header = () => {
               </div>}
             </div>
 
-            <Link to="https://discord.gg/vf2jJxEVn7" className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl" >
-              <span>Community</span>
-            </Link>
+            <div className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl" >
+              <a href="https://discord.gg/vf2jJxEVn7" target='_blank'>Community</a>
+            </div>
 
             <Link to="/pricing" className="text-white  md:text-sm lg:text-xl 2xl:text-2xl" >
               <span>Pricing</span>

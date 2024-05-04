@@ -10,14 +10,14 @@ import { contactAPI } from '../../utils/APIservice';
 
 const Contact = () => {
   // State for input fields
-  // const [reference, setReference] = useState("");
+  const [reference, setReference] = useState("");
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phoneNumber: '',
     message: '',
-    subject: '',
+    referredBy: '',
   });
 
   // Handler for input change
@@ -29,15 +29,6 @@ const Contact = () => {
     }));
   };
 
-  // const setReferredby = (e) => {
-  //   const { name, value } = e.target;
-  //   if (value === "Others") {
-  //     setReference("Others");
-  //   } else {
-  //     setReference("");
-  //   }
-  // };
-  
 
   // Validation function for email using regex
   function isValidEmail(inputEmail) {
@@ -48,9 +39,9 @@ const Contact = () => {
   // Handler for form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData); //test
+    // console.log(formData); //test
 
-    if (!formData?.email?.trimEnd()?.length || !formData?.firstName?.trimEnd()?.length || !formData?.lastName?.trimEnd()?.length || !formData?.phoneNumber?.trimEnd()?.length || !formData?.subject?.trimEnd()?.length) {
+    if (!formData?.email?.trimEnd()?.length || !formData?.firstName?.trimEnd()?.length || !formData?.lastName?.trimEnd()?.length || !formData?.phoneNumber?.trimEnd()?.length || !formData?.referredBy?.trimEnd()?.length) {
       return toast.error("Please enter all fields");
     }
 
@@ -61,9 +52,22 @@ const Contact = () => {
     const emailCheck = isValidEmail(formData?.email?.trimEnd());
     if (!emailCheck) return toast.error("Please enter a valid email address");
 
+    if (formData.referredBy === "Others") {
+      if (!reference?.trimEnd()?.length) return toast.error("Please enter reference details");
+    }
+
     try {
       toast.promise(
-        contactAPI(formData),
+        contactAPI(
+          {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber,
+            message: formData.message,
+            referredBy: formData.referredBy === "Others" ? reference : formData.referredBy,
+          }
+        ),
         {
           loading: 'Submitting details...',
           success: <b>message sent successfully!</b>,
@@ -114,8 +118,8 @@ const Contact = () => {
                     <input id='message' name='message' value={formData.message} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Message' />
                   </div>
                   <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
-                    <label htmlFor="subject" className='text-xs 2xl:text-sm font-medium'>How did you hear about us?</label>
-                    <select id='subject' name='subject' value={formData.subject} aria-valuenow={formData.subject} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Facebook, instagram, twitter'>
+                    <label htmlFor="referredBy" className='text-xs 2xl:text-sm font-medium'>How did you hear about us?</label>
+                    <select id='referredBy' name='referredBy' value={formData.referredBy} aria-valuenow={formData.referredBy} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Facebook, instagram, twitter'>
                       <option value="LinkedIn">LinkedIn</option>
                       <option value="Discord">Discord</option>
                       <option value="Twitter">Twitter</option>
@@ -125,12 +129,12 @@ const Contact = () => {
                     </select>
                   </div>
 
-                  {/* {reference === "Others" &&
+                  {formData.referredBy === "Others" &&
                     <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
                       <label htmlFor="reference2" className='text-xs 2xl:text-sm font-medium'>Others, Please Specify</label>
-                      <input id='reference2' name='reference2' value={formData.subject} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Message' />
+                      <input id='reference2' name='reference2' value={reference} onChange={(e) => setReference(e.target.value)} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Referred by' />
                     </div>
-                  } */}
+                  }
                 </div>
               </div>
               <div>

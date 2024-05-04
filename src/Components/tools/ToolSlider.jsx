@@ -55,7 +55,7 @@ function ToolSlider({ beforeImg, afterImg }) {
                 Swipe it
               </span>
               <span className="hidden md:block text-lg lg:text-xl xl:text-2xl relative text-white font-semibold mt-2 pointer-events-none" >
-                Swipe to Future
+                Swipe to the Future
               </span>
             </div>
           </div>

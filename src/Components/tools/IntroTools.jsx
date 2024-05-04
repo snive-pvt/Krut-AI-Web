@@ -24,14 +24,14 @@ function IntroTools({ heading, description, video }) {
           </p>
         </div>
       </div>
-      <div className="my-10 px-8 flex justify-center items-center">
+      {video && <div className="my-10 px-8 flex justify-center items-center">
         <video key={key}
           className="max-h-[414px] md:mx-7 lg:mx-9 rounded-2xl"
           controls autoPlay loop muted>
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div>}
     </div>
   );
 }
