@@ -7,7 +7,7 @@ export const BlogsData = [
         author: "Krish Gaglani",
         date: "April 23, 2024",
 
-        titleImg: "https://s3-alpha-sig.figma.com/img/66bf/c075/7c4afaf9208cff002aafae1c7e033518?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=g2LzAM7E88GgqxdKcjltfEN09ywO8vu4D6Z247uwIlYB1Ip12fL8U-vDXgNgaHEU~Nib3j7vIa01vcbEvO5-GLB57bJkFHsbAzKK7M61fJqltrsZaMGbTvRhg5yc9p7dV01F~OQjVbGAjw1VU4rxxha9kwHz7YdH3RG16DxooFcQARtRnp0WMNA6jtp63e6kqdmPLwggLw9xXi-cSeAjteHynDnM~FjKfPKPbwavGu6MBXvJ41zDFql8g6ONBflcAOBSzIhJ7GxGKVfB9PPFmRceit44ehUtY0RKcIoc~DIJkYvqkIdUmTliRq-fhAjurbgTsPveS1qGmdCfk5M6~g__",
+        titleImg: "/blogs/1.webp",
 
         titleIntro: "A time where AI’s are capable of more things than ever before, it’s natural to feel threatened by the rise of artificial intelligence in art and design. But fear not, for there are reasons for beauty to be found in both humans and AI creations. While machines can churn out thousands of images, the human spirit brings an intangible quality no algorithm can replicate. So come along on this journey as we explore the pros, cons, similarities and differences between human and AI artistry. Both have their place and purpose. Our human skills are not at a place to be threatened with, but rather inspired by the possibilities.  Let’s approach this debate with open minds as there is room for all to create.",
 
@@ -72,7 +72,7 @@ export const BlogsData = [
         author: "Krish Gaglani",
         date: "April 25, 2024",
 
-        titleImg: "https://s3-alpha-sig.figma.com/img/8692/88ee/d940a61d13a61d173f68ffd1ed9574eb?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IJYXrIJ0dNzgwe35pk9Gi2oGe0G3YySwHRAyTmEDQi-f8jeBqe-eM1RgeSF8YJH8iPqfdHUTpNq0Tzy1VdmyKX0pN8sf4aCqa60Qu8G-qiQnnehVoRMkPtAvbgc5-zBJIsa0jffvFFB8jX-61X4OA~K9EqJ-Yfk7N2a0R094geCR~s37bR4XWH9e0~ZiLXbjrESPJIMeezldcnFT6I1k6lMUz5PRU4JYETkw067twEABZYqEY2E70d8UXp9t71ohsJdAX1pYhV6rr1vJtvIOo7mmn1qShMXg~Mjxlm7RjBUOQfnhGgJ33~BQwkdRg6VSI2MU9POF~O9tC~kteW1q9w__",
+        titleImg: "/blogs/2.webp",
 
         titleIntro: "Are you an e-commerce business owner selling products online? Wondering how to make your products stand out on your website? Professional product photos are essential, but hiring a professional photographer can be expensive. That's where AI comes in. Using AI, you can create stunning product photos yourself at a fraction of the cost. In this article, you will discover how AI can assist you in creating beautiful, high-quality images that match your brand and products perfectly.",
 
@@ -107,7 +107,7 @@ export const BlogsData = [
         <p>&nbsp;</p>
         <h2 style="font-size: 2rem; padding: 10px 0px; font-weight:600" > <span>Conclusion</span></h2>
         <p><span>You no longer need to be an expert photographer to get great product images for your online store. Tools like Product Studio make it easier for e-commerce business owners and others to enhance their product photos and streamline their workflows. This saves time and money, allowing e-commerce businesses to create top-notch product images that boost sales.</span><span><br /></span><span><br /></span><span>Experience the power of AI and transform your product visuals with Krut AI&mdash;where stunning imagery meets cutting-edge technology.</span></p>
-        <h2 style="font-size: 2rem; padding: 10px 0px; font-weight:600" > <span><br /></span><em><span>Keywords: Product studio, Product photography, AI product photography</span></em></h2>`
+        <p> <span><br /></span><em><span>Keywords: Product studio, Product photography, AI product photography</span></em></p>`
     },
     {
         id: 3,
@@ -117,7 +117,7 @@ export const BlogsData = [
         author: "Krish Gaglani",
         date: "April 27, 2024",
 
-        titleImg: "https://s3-alpha-sig.figma.com/img/0ae4/8448/3f2462c4d69d1352be7f24b59ace45a4?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RF~FLuy-Ku1j3KfQt7Bgb3xLKwlQAUFofPXU2JNSR6Igw6Wdvj1vaHmIA2V~CdUKgZskDS0WMheb4RXg0K8N7MmODvNVDljwlfi8lfqg0qBTkgk-pcYlO~9AeScdAEh1bauC8XawdDQaQhQovlR905iwq9mQoH98fOKPxnYey~RRETeZfXzjA5avdnBsZB4aKsL4FPsu5lJDdmjjJFQEKi-CPAid-hjwmYXSg6ufr5y7KX0F6tJexCFoElvrfzJYQkwAiXelWtzwBN4nCjGUPtBtppdwx9D3Me8JD9GdTmSvtmutowkFw-snqDuNoiBZsXq0xrio-pjk2xNZTP73uA__",
+        titleImg: "/blogs/3.webp",
 
         titleIntro: "The use of high-quality images is very crucial in attracting and keeping the attention of online customers, particularly in e-commerce. To increase engagement and sales, it is important to attract customers with clear, detailed, and compelling images. In this post, we will discuss the top 5 image upscalers that are designed to ensure that your visual content is not only great but also to 4K resolution, ultimately making your product stand out in the year 2024.",
 
@@ -211,7 +211,7 @@ export const BlogsData = [
         author: "Krish Gaglani",
         date: "April 29, 2024",
 
-        titleImg: "https://s3-alpha-sig.figma.com/img/0d72/2b23/47ca32678668dc0b44a39331dfa5b099?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ow~-zziAB3D~FUlPwy8llY8OgwZ5BHuJZjejKInSy1UtCtSp2pq2rXjKYKXKygve4R4yPvdLCOct~UH3E2ovypdnPtMv0tJWPzL-Cmi1LOHxkR6hY5X48Gie9186Ro-viZTgep1tSafE1tSnBgs-RrdwtbQdU18jLhJqlbMf5f6D5nck0Tu4AT97MM~JYMpO8EsckRyZYrljo5MsEIpRtpzZWPcmDmR7P1Us1vS-3zp50wJn1K1BJxbfkJdd55lTTx8infYXYsgL9U~jJQxqUyDsdAixi0YG-6GPH7qp8A0RVhNlklKIRzo24QFHpmg4QVi8xMYzUBXvyqC87x0Cag__",
+        titleImg: "/blogs/4.webp",
 
         titleIntro: "In the visually driven world of e-commerce, advertising with compelling images can significantly enhance customer engagement and boost sales. However, the logistics and expenses of traditional photo shoots often limit the creative possibilities. Enter Krut AI's innovative tool, Model Studio, which harnesses the power of AI to revolutionize how businesses create ads by generating photorealistic human models. This breakthrough offers a cost-effective, efficient solution perfect for e-commerce business owners and SMEs looking to elevate their advertising strategies.",
 

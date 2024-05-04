@@ -8,14 +8,18 @@ import "./blog.css"
 
 
 const Blog = () => {
-    const [blogData, setBlogData] = useState(BlogsData[BlogsData?.length-1]);
+    const [blogData, setBlogData] = useState(BlogsData[BlogsData?.length - 1]);
+    const [currentURL, setCurrentURL] = useState(window.location.href);
     const location = useLocation();
 
     useEffect(() => {
+        // console.log(currentURL)
         if (!window.location.search?.length) return;
-        const id = window.location.search.split('=')[1];
-        if (id > 0 && id <= BlogsData?.length) setBlogData(BlogsData[id - 1]);
-    }, [location])
+        const id = window.location.search.split('=')[1] - 1;
+        if (id >= 0 && id < BlogsData?.length) setBlogData(BlogsData[id]);
+        setCurrentURL(window.location.href)
+    }, [location, currentURL]);
+
 
     return (
         <>
@@ -32,7 +36,7 @@ const Blog = () => {
 
                     <div className=' lg:min-h-[25rem]  xl:mt-12 md:py-8 lg:py-10  flex items-center justify-center'>
                         <div className='w-[77%]'>
-                            <img className='w-full' src={blogData.titleImg} alt={blogData.title} />
+                            <img className='w-full rounded-xl' src={blogData.titleImg} alt={blogData.title} />
                         </div>
                         <div className='w-[23%] flex flex-col mx-4'>
                             <div className=' border-krutNeon  border border-opacity-30 md:min-h-[3rem] lg:min-h-[4rem] xl:min-h-[6rem] 2xl:min-h-[8rem] md:rounded-xl lg:rounded-3xl flex items-center justify-center'>
@@ -50,10 +54,10 @@ const Blog = () => {
                                     <div>
                                         <div className="flex justify-center items-center mt-2">
                                             <div className="flex xl:space-x-6  md:space-x-2">
-                                                <a href="http://discord.com" target="_blank">
+                                                <a href="https://discord.com" target="_blank">
                                                     <img className='md:h-2 lg:h-4' src="/icons/discord.png" alt="discord" />
                                                 </a>
-                                                <a href="http://linkedin.com" target="_blank">
+                                                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}&title=${blogData.title}&summary=${blogData.titleIntro}`} target="_blank">
                                                     <img className='md:h-2 lg:h-4' src="/icons/linkedIn.png" alt="linkedIn" />
                                                 </a>
                                                 <a href="http://instagram.com" target="_blank">
@@ -69,7 +73,7 @@ const Blog = () => {
                                 </div>
                                 <div className='text-white text-xs lg:text-sm 2xl:text-xl md:mt-2 lg:mt-4 2xl:mt-5 text-center'>
                                     <h1 className='text-xs md:text-[10px] lg:text-sm'>Get Started For Free</h1>
-                                    <button className='rounded-full px-4 mt-2 2xl:mt-3 md:text-xs lg:text-sm text-black font-semibold' style={{ background: 'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' }} >Try Krut AI</button>
+                                    <button className='rounded-full px-4 mt-2 2xl:mt-3 md:text-xs lg:text-sm text-black font-semibold' style={{ background: 'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' }} >Try Krut AI (Beta)</button>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +115,7 @@ const Blog = () => {
                     </div>
                     <div className='my-2'>
                         <div className='mx-[20px]'>
-                            <img src={blogData.titleImg} alt={blogData.title} className='w-full h-auto' />
+                            <img src={blogData.titleImg} alt={blogData.title} className='w-full h-auto rounded-xl' />
                         </div>
                         <div>
                             <p className='text-white my-8 mx-[20px] text-[15px] font-light'>
@@ -129,10 +133,10 @@ const Blog = () => {
                         <div className="flex justify-center items-center ">
                             <div className="flex justify-center items-center space-x-4">
                                 <IoMdShareAlt className='text-krutNeon text-3xl' />
-                                <a href="http://discord.com" target="_blank">
+                                <a href="https://discord.com" target="_blank">
                                     <img className='h-6' src="/icons/discord.png" alt="discord" />
                                 </a>
-                                <a href="http://linkedin.com" target="_blank">
+                                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}&title=${blogData.title}&summary=${blogData.titleIntro}`} target="_blank">
                                     <img className='h-6' src="/icons/linkedIn.png" alt="linkedIn" />
                                 </a>
                                 <a href="http://instagram.com" target="_blank">

@@ -64,9 +64,9 @@ function Footer() {
                             <div className='px-3 sm:px-6'>
                                 <h3 className="text-lg sm:text-xl font-semibold  mt-4 mb-2">Company</h3>
                                 <ul className='text-sm sm:text-lg font-thin'>
-                                    <li>Community</li>
+                                    <li className='cursor-pointer'> <a href="https://discord.gg/vf2jJxEVn7" target='_blank'>Community</a></li>
                                     <li className='cursor-pointer' onClick={() => Navigate('/blogs')}>Blogs</li>
-                                    <li>Tutorials</li>
+                                    <li className='cursor-pointer' onClick={() => toast('Page coming soon', {icon: '🔜',})}>Tutorials</li>
                                     <li className='cursor-pointer' onClick={() => Navigate('/pricing')}>Pricing</li>
                                     <li className='cursor-pointer' onClick={() => Navigate('/contact')}>Contact Us</li>
                                     <li>Legal</li>

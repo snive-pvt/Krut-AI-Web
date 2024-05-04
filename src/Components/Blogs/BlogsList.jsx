@@ -10,7 +10,7 @@ function BlogsList({ isExtended }) {
         <>
             <div className=" xl:mx-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-20">
                 {blogs.map((blog, index) => (
-                    isExtended ? <BlogsCard key={blog.id} blog={blog} /> : (index < 3 && <BlogsCard key={blog.id} blog={blog} />)
+                    isExtended ? <BlogsCard key={index} blog={blog} /> : (index < 3 && <BlogsCard key={index} blog={blog} />)
                 ))}
             </div>
 
