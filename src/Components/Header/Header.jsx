@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Images/image_prev_ui (2).png";
 import { HiMenuAlt4 } from "react-icons/hi";
 // import { BiMailSend } from "react-icons/bi";
@@ -15,6 +15,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const location = useLocation();
+  const Navigate = useNavigate();
 
   const supportMenu = useRef(null);
   const dropdownRef = useRef(null);
@@ -35,6 +36,18 @@ const Header = () => {
     if (supportMenu.current && !supportMenu.current.contains(e.target)) {
       // setIsOpen(false);
       // setIsSupportOpen(false);
+    }
+  };
+
+  const scrollToToolsList = () => {
+    const toolsListElement = document.getElementById('ToolsList');
+    if (toolsListElement) {
+      toolsListElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      setTimeout(() => {
+        scrollToToolsList
+      }, 1000);
+      Navigate("/tools")
     }
   };
 
@@ -75,7 +88,7 @@ const Header = () => {
                   <span className="material-symbols-outlined cursor-pointer" onClick={toggleMenu}> close </span>
                 </div>
 
-                <Link to="/tools" className="text-white text-2xl font-semibold"> Tools </Link>
+                <div onClick={scrollToToolsList} className="text-white text-2xl font-semibold cursor-pointer"> Tools </div>
 
                 <div className="relative group ">
                   <Link to="" className="text-white text-2xl font-semibold flex gap-5" onClick={toggleSupportMenu} >
@@ -122,12 +135,11 @@ const Header = () => {
 
           {/* Large display Header */}
           <div className="header-items hidden md:flex  lg:gap-16 md:gap-10 mt-2">
-            <Link
-              to="/tools"
-              className="text-white md:text-sm lg:text-xl 2xl:text-2xl"
-            >
+            <div
+              onClick={scrollToToolsList}
+              className="text-white md:text-sm lg:text-xl 2xl:text-2xl cursor-pointer">
               <span>Tools</span>
-            </Link>
+            </div>
 
             <div className="relative group">
 

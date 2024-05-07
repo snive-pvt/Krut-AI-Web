@@ -5,6 +5,7 @@ import Footer from "../../Components/Footer/Footer";
 import { BlogsData } from "../../Data/BlogsData";
 import { useNavigate } from "react-router-dom";
 import BlogsList from "../../Components/Blogs/BlogsList";
+import MobileAppAd from "../../Components/Home/MobileAppAd";
 
 const Blogs = () => {
   const linearGreenBackground = {
@@ -60,15 +61,12 @@ const Blogs = () => {
 
           </div>
 
-
         </div>
 
         <BlogsList isExtended={true}/>
-
+        <MobileAppAd />
         <GetStarted />
-
         <Footer />
-
       </div>
     </>
   );

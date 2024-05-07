@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 function ToolsList() {
-    const [activeTool, setActiveTool] = useState(cardData[0].title);
+    const [activeTool, setActiveTool] = useState("");
     const location = useLocation();
 
     useEffect(() => {

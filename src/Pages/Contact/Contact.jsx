@@ -120,6 +120,7 @@ const Contact = () => {
                   <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
                     <label htmlFor="referredBy" className='text-xs 2xl:text-sm font-medium'>How did you hear about us?</label>
                     <select id='referredBy' name='referredBy' value={formData.referredBy} aria-valuenow={formData.referredBy} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Facebook, instagram, twitter'>
+                      <option value="">Select</option>
                       <option value="LinkedIn">LinkedIn</option>
                       <option value="Discord">Discord</option>
                       <option value="Twitter">Twitter</option>
