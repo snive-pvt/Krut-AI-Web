@@ -15,6 +15,7 @@ import StartupInida from "../../assets/Images/startupIndia.png";
 import Footer from "../../Components/Footer/Footer";
 import PromoVideo from "../../assets/Images/Render Last 720.mp4";
 import BlogsList from "../../Components/Blogs/BlogsList";
+import PricingCards from "../../Components/Pricing/PricingCards";
 
 const Home = () => {
   return (
@@ -60,17 +61,17 @@ const Home = () => {
               </ul>
             </div>
 
-           <Link to='/book_demo'>
-           <div
-              className="sec-one-button zoomEffect text-black rounded-full px-8 py-1 mt-16 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
-              style={{
-                background:
-                  "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
-              }}
-            >
-              Try Krut AI <span className="text-base">(Beta)</span>
-            </div>
-           </Link>
+            <Link to='/book_demo'>
+              <div
+                className="sec-one-button zoomEffect text-black rounded-full px-8 py-1 mt-16 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)",
+                }}
+              >
+                Try Krut AI <span className="text-base">(Beta)</span>
+              </div>
+            </Link>
 
           </div>
         </div>
@@ -126,19 +127,17 @@ const Home = () => {
               </div>
             ))}
           </div>
-         <Link to='/mobiletools'>
-         <div className="md:hidden border border-krutNeon mx-16 py-2 text-white text-center rounded-full  mt-10 text-lg font-bold">
-            Explore More
-          </div>
+          <Link to='/mobiletools'>
+            <div className="md:hidden border border-krutNeon mx-16 py-2 text-white text-center rounded-full  mt-10 text-lg font-bold">
+              Explore More
+            </div>
           </Link>
-          
+
         </div>
       </div>
 
       <div
-        className=" min-h-[8rem]  lg:min-h-screen bg-cover bg-no-repeat bg-center"
-        style={{ backgroundImage: `url(${Comp2Gif})` }}
-      >
+        className=" min-h-[8rem]  lg:min-h-screen bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${Comp2Gif})` }}>
         <div className="lg:min-h-screen  min-h-[8rem] bg-black bg-opacity-95 py-16 flex flex-col justify-center ">
           <div className="border border-krutNeon  min-h-[10rem] md:min-h-[20rem] 2xl:min-h-[25rem] text-white rounded-[43px] mx-4 md:mx-16 lg:mx-20 xl:mx-[17rem] flex flex-col  justify-center items-center">
             <h1 className="text-center font-bold text-3xl md:text-5xl lg:text-6xl">
@@ -181,7 +180,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container-fluid min-h-[40rem] mt-12 md:mt-8 lg:mt-5 2xl:mt-20 ">
+      <BlogsList isExtended={false} />
+
+      <div className="container-fluid min-h-[40rem] my-12 md:my-8 lg:my-5 2xl:my-20 ">
         <div className=" bg-gray-200 min-h-[34rem]  md:min-h-[28rem] lg:min-h-[33rem] 2xl:min-h-[38rem]  rounded-xl md:rounded-5xl  lg:rounded-[3rem] md:flex mx-6 md:mx-16 2xl:mx-36">
           <div className="lg:w-1/2 sm:w-full discord-img flex justify-center items-center">
             <img
@@ -206,12 +207,11 @@ const Home = () => {
         </div>
       </div>
 
-      <BlogsList isExtended={false}/>
+     
 
-      <div
+      {/* <div
         className="min-h-[50rem] bg-center bg-cover bg-no-repeat bg-opacity-30 "
-        style={{ backgroundImage: `url(${bgVector})` }}
-      >
+        style={{ backgroundImage: `url(${bgVector})` }} >
         <div className="min-h-[50rem] bg-black bg-opacity-90 py-8 ">
           <div className="text-center">
             <h1 className="text-white  text-3xl md:text-6xl lg:text-7xl font-bold leading-tight">
@@ -221,6 +221,7 @@ const Home = () => {
               Ideal Price
             </h1>
           </div>
+         
           <div className="lg:px-32 xl:px-60 mx-8 md:mx-4 2xl:mx-20 mt-8 price-cards ">
             <div className="grid grid-cols-1 sm:grid-cols-1   md:grid-cols-3  gap-8">
               <div className="  border-2 border-krutNeon text-white rounded-[2.5rem] ">
@@ -317,7 +318,9 @@ const Home = () => {
           </Link>
           
         </div>
-      </div>
+      </div> */}
+
+      <PricingCards isHomePage={true} isExpanded={true}/>
 
       <div className="container-fluid mx-8 lg:mx-16 2xl:mx-24">
         <img src="/images/mobileApp.webp" alt="Krut Mobile" />
@@ -325,7 +328,7 @@ const Home = () => {
 
       <GetStarted />
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

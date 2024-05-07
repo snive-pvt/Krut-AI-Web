@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { pricingTable } from '../../assets/pricingTable';
 import { useNavigate } from 'react-router-dom';
 
-function PricingCards({ isMonthly, isExpanded }) {
+function PricingCards({ isMonthly, isExpanded, isHomePage = false }) {
     const [plusMultiplier, setPlusMultiplier] = useState(1);  //multiplier for no of users _ plus
     const [proMultiplier, setProMultiplier] = useState(1);  //multiplier for no of users _ pro
     const Navigate = useNavigate();
@@ -10,7 +10,7 @@ function PricingCards({ isMonthly, isExpanded }) {
     return (
         <>
             {/* ======== Pricing Cards ========= */}
-            <div className={`w-full ${isExpanded? "block" : "hidden xl:block"}`}>
+            <div className={`w-full ${isExpanded ? "block" : "hidden xl:block"}`}>
                 <div className="flex flex-col justify-center items-center xl:flex-row xl:justify-evenly overflow-hidden">
                     {pricingTable && pricingTable.map((list, index) =>
 
@@ -34,7 +34,7 @@ function PricingCards({ isMonthly, isExpanded }) {
 
                                 <br />
 
-                                <div className="hidden xl:block h-16 mb-3">
+                                {!isHomePage && <div className="hidden xl:block h-16 mb-3">
                                     <div className="flex items-center justify-center h-full relative">
                                         {list?.title !== "Free" && <div className="w-[75%]">
 
@@ -71,7 +71,7 @@ function PricingCards({ isMonthly, isExpanded }) {
                                             />
 
                                             <div className="text-center">
-                                                <p className='text-sm'>More Than 10 Users? <span className='text-krutNeon cursor-pointer' onClick={()=>Navigate('/contact')}>
+                                                <p className='text-sm'>More Than 10 Users? <span className='text-krutNeon cursor-pointer' onClick={() => Navigate('/contact')}>
                                                     Contact<span className='text-transparent text-xs'>.</span>Us</span>
                                                 </p>
                                             </div>
@@ -79,18 +79,18 @@ function PricingCards({ isMonthly, isExpanded }) {
                                         }
                                     </div>
 
-                                </div>
+                                </div>}
 
 
                                 <div className="flex items-center justify-center">
 
-                                    <button className="zoomEffect text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
-                                    onClick={()=>Navigate('/book_demo')}
-                                    style={{
-                                        backgroundImage: list?.title === "Pro" ?
-                                            'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' :
-                                            'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'
-                                    }}>
+                                    <button className="zoomEffect text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer"
+                                        onClick={() => Navigate('/book_demo')}
+                                        style={{
+                                            backgroundImage: list?.title === "Pro" ?
+                                                'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' :
+                                                'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'
+                                        }}>
                                         {list?.buttonText}
                                     </button>
 
@@ -98,7 +98,7 @@ function PricingCards({ isMonthly, isExpanded }) {
                             </div>
 
 
-                           {isExpanded && <div className=" bg-white  text-gray-500 text-base sm:text-lg leading-8 sm:leading-10 rounded-t-3xl rounded-b-3xl px-5 py-5 tracking-tight">
+                            {isExpanded && <div className=" bg-white  text-gray-500 text-base sm:text-lg leading-8 sm:leading-10 rounded-t-3xl rounded-b-3xl px-5 py-5 tracking-tight">
                                 <p> &#x2713;  <span className='ms-3'>{list?.storage} GB Storage</span></p>
                                 <p> &#x2713;  <span className='ms-3'>{list?.iStock} Photos by iStock</span></p>
                                 <p>&#x2713;  <span className='ms-3'>Unlimited Projects</span></p>
@@ -112,9 +112,16 @@ function PricingCards({ isMonthly, isExpanded }) {
             </div>
 
             {isExpanded && <div className="flex justify-center items-center my-10">
-                <a href="#CompareChart" >
-                    <button className='text-white text-xl rounded-3xl border border-krutNeon hover:bg-krutNeon hover:text-black zoomEffect py-1.5 px-10'>Compare</button>
-                </a>
+                {isHomePage ?
+                    <button className='text-white text-xl rounded-3xl border border-krutNeon hover:bg-krutNeon hover:text-black zoomEffect py-1.5 px-10' 
+                    onClick={() => Navigate("/pricing")} >
+                        Compare
+                    </button>
+                    :
+                    <a href="#CompareChart" >
+                        <button className='text-white text-xl rounded-3xl border border-krutNeon hover:bg-krutNeon hover:text-black zoomEffect py-1.5 px-10'>Compare</button>
+                    </a>
+                }
             </div>}
         </>
     )
