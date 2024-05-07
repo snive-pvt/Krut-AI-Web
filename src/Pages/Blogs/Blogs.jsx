@@ -35,7 +35,7 @@ const Blogs = () => {
             Blogs
           </h1>
           <p className="mt-8 mx-2 sm:mx-4 text-sm px-8 text-center xl:text-base 2xl:text-lg 2xl:font-normal text-white xl:font-light">
-            Get Valuable insights,practical tips,and thought-provoking analyses to keep you informed and inspired.
+            Get Valuable insights, practical tips, and thought-provoking analyses to keep you informed and inspired.
           </p>
 
           <div className="min-h-[220px] md:min-h-[240px] xl:min-h-[340px] 2xl:min-h-[440px] xl:mx-20 2xl:mx-40 border border-krutNeon rounded-2xl 2xl:rounded-3xl mx-4 md:mx-12 mt-16 mb-4 flex">

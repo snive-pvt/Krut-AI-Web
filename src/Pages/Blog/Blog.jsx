@@ -55,8 +55,8 @@ const Blog = () => {
                                     <div>
                                         <div className="flex justify-center items-center mt-2">
                                             <div className="flex xl:space-x-6  md:space-x-2">
-                                                <a href="https://discord.com" target="_blank">
-                                                    <img className='md:h-2 lg:h-4' src="/icons/discord.png" alt="discord" />
+                                                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentURL)}`} target="_blank">
+                                                    <img className='md:h-2 lg:h-4' src="/icons/facebook.png" alt="facebook" />
                                                 </a>
                                                 <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}&title=${blogData.title}&summary=${blogData.titleIntro}`} target="_blank">
                                                     <img className='md:h-2 lg:h-4' src="/icons/linkedIn.png" alt="linkedIn" />
@@ -137,8 +137,8 @@ const Blog = () => {
                         <div className="flex justify-center items-center ">
                             <div className="flex justify-center items-center space-x-4">
                                 <IoMdShareAlt className='text-krutNeon text-3xl' />
-                                <a href="https://discord.com" target="_blank">
-                                    <img className='h-6' src="/icons/discord.png" alt="discord" />
+                                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentURL)}`} target="_blank">
+                                    <img className='h-6' src="/icons/facebook.png" alt="facebook" />
                                 </a>
                                 <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}&title=${blogData.title}&summary=${blogData.titleIntro}`} target="_blank">
                                     <img className='h-6' src="/icons/linkedIn.png" alt="linkedIn" />

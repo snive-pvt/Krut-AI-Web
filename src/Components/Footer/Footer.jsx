@@ -42,7 +42,7 @@ function Footer() {
                         <div className="m-3 w-[90%] lg:max-w-[40%] xl:max-w-2xl text-white space-y-7">
                             <h2 className='text-3xl sm:text-5xl font-bold'>Receive <span className='text-krutNeon'>messages</span> from the future</h2>
                             <div className="flex">
-                                <input className='w-[70%] bg-transparent border border-white rounded px-3 py-0.5' type="text" placeholder='Email'
+                                <input className='w-[70%] bg-transparent border border-white rounded px-3 py-0.5' type="email" placeholder='Email'
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <button className='ms-5 sm:ms-10 border border-white w-8 h-8 rounded-full flex justify-center items-center 
@@ -113,18 +113,24 @@ function Footer() {
                 {/* social links */}
                 <div className="py-5 w-full px-3 ">
                     <div className="flex justify-center items-center">
-                        <div className="flex space-x-12 md:space-x-5">
+                        <div className="flex space-x-8 md:space-x-5">
                             <a href="https://discord.gg/vf2jJxEVn7" target="_blank">
-                                <img className='h-8 zoomEffect' src="/icons/discord.png" alt="discord" />
+                                <img className='h-8 zoomEffect' src="/icons/discord.png" alt="Krut Discord" />
                             </a>
                             <a href="https://www.linkedin.com/company/krut-ai/?viewAsMember=true" target="_blank">
-                                <img className='h-8 zoomEffect' src="/icons/linkedIn.png" alt="linkedIn" />
+                                <img className='h-8 zoomEffect' src="/icons/linkedIn.png" alt="Krut LinkedIn" />
                             </a>
                             <a href="https://www.instagram.com/_krut.ai/" target="_blank">
-                                <img className='h-8 zoomEffect' src="/icons/instagram.png" alt="instagram" />
+                                <img className='h-8 zoomEffect' src="/icons/instagram.png" alt="Krut Instagram" />
                             </a>
                             <a href="https://twitter.com/krutAI_" target="_blank">
-                                <img className='h-8 zoomEffect' src="/icons/x.png" alt="x" />
+                                <img className='h-8 zoomEffect' src="/icons/x.png" alt="Krut X" />
+                            </a>
+                            <a href="https://www.facebook.com/people/Krut-AI/61559205755709/" target="_blank">
+                                <img className='h-8 zoomEffect' src="/icons/facebook.png" alt="Krut Facebook" />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCTUjDWEOkvDnLHrqX9VKnKw" target="_blank">
+                                <img className='h-8 zoomEffect' src="/icons/youtube.png" alt="Krut Youtube" />
                             </a>
                         </div>
                     </div>

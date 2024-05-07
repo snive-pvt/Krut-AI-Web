@@ -134,7 +134,7 @@ const Contact = () => {
                   {formData.referredBy === "Others" &&
                     <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
                       <label htmlFor="reference2" className='text-xs 2xl:text-sm font-medium'>Others, Please Specify</label>
-                      <input id='reference2' name='reference2' value={reference} onChange={(e) => setReference(e.target.value)} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Referred by' />
+                      <input id='reference2' name='reference2' value={reference} onChange={(e) => setReference(e.target.value)} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Referred By' />
                     </div>
                   }
                 </div>

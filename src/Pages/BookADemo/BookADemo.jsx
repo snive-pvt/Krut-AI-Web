@@ -4,7 +4,7 @@ import Footer from '../../Components/Footer/Footer';
 import Faq from '../../Components/faq/Faq';
 import { faqData } from '../../Data/faqData';
 import toast from 'react-hot-toast';
-import { contactAPI } from '../../utils/APIservice';
+import { bookDemoAPI } from '../../utils/APIservice';
 import { CountryCodes } from '../../Data/CountryCodes';
 
 const BookADemo = () => {
@@ -16,7 +16,7 @@ const BookADemo = () => {
         firstName: '',
         lastName: '',
         email: '',
-        countryCode: '+91',
+        countryCodeIndex: '102', //India index in json
         phoneNumber: '',
         profession: '',
         referredBy: '',
@@ -63,7 +63,7 @@ const BookADemo = () => {
         //     firstName: formData.firstName,
         //     lastName: formData.lastName,
         //     email: formData.email,
-        //     phoneNumber: formData.countryCode+formData.phoneNumber,
+        //     phoneNumber: CountryCodes[formData.countryCodeIndex].code+formData.phoneNumber,
         //     profession: formData.profession === "Others" ? otherProfession : formData.profession,
         //     referredBy: formData.referredBy === "Others" ? reference : formData.referredBy,
         // })
@@ -71,12 +71,12 @@ const BookADemo = () => {
 
         try {
             toast.promise(
-                contactAPI(
+                bookDemoAPI(
                     {
                         firstName: formData.firstName,
                         lastName: formData.lastName,
                         email: formData.email,
-                        phoneNumber: formData.countryCode + formData.phoneNumber,
+                        phoneNumber: CountryCodes[formData.countryCodeIndex].code+formData.phoneNumber,
                         profession: formData.profession === "Others" ? otherProfession : formData.profession,
                         referredBy: formData.referredBy === "Others" ? reference : formData.referredBy,
                     }
@@ -133,17 +133,17 @@ const BookADemo = () => {
 
                                 <div className='flex justify-between mb-2 2xl:mb-5'>
                                     <div className='h-14 2xl:h-16 flex flex-col w-[15%]'>
-                                        <label htmlFor="countryCode" className='text-xs 2xl:text-sm font-medium'>Code</label>
-                                        <select id='countryCode' name='countryCode' value={formData.countryCode} aria-valuenow={formData.countryCode} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text">
+                                        <label htmlFor="countryCodeIndex" className='text-xs 2xl:text-sm font-medium'>Code</label>
+                                        <select id='countryCodeIndex' name='countryCodeIndex' value={formData.countryCodeIndex} aria-valuenow={formData.countryCodeIndex} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text">
                                             {CountryCodes.map((item, index) => (
-                                                <option key={index} value={item.code}> {item.name} ({item.code})</option>
+                                                <option key={index} value={index}> {item.name} ({item.code})</option>
                                             ))}
                                         </select>
 
                                     </div>
                                     <div className='h-14 2xl:h-16 flex flex-col w-[80%]'>
                                         <label htmlFor="phoneNumber" className='text-xs 2xl:text-sm font-medium'>Phone Number</label>
-                                        <input id='phoneNumber' name='phoneNumber' value={formData.phoneNumber} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="number" placeholder='Phone number' />
+                                        <input id='phoneNumber' name='phoneNumber' value={formData.phoneNumber} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="tel" placeholder='Phone number' />
                                     </div>
                                 </div>
 
@@ -160,7 +160,7 @@ const BookADemo = () => {
                                 <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-full'>
                                     <label htmlFor="profession" className='text-xs 2xl:text-sm font-medium'>Are you ?</label>
                                     <select id='profession' name='profession' value={formData.profession} aria-valuenow={formData.profession} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text">
-                                        <option value=""><span className='text-gray-300'>Select</span></option>
+                                        <option value="">Select</option>
                                         <option value="Creator">Creator</option>
                                         <option value="SMB">Small And Midsize Business</option>
                                         <option value="E-Commerce">E-Commerce</option>
@@ -214,11 +214,11 @@ const BookADemo = () => {
                             </button>
                         </div>
                     </div>
+                    
                 </div>
             </form>
 
             <Faq {...faqData} />
-
             <Footer />
         </div>
 

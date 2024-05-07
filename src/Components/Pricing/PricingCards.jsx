@@ -29,7 +29,7 @@ function PricingCards({ isMonthly, isExpanded, isHomePage = false }) {
 
                             <div className="p-7 pt-0 w-full">
                                 <h1 className="font-semibold text-3xl sm:text-4xl lg:5xl  mb-4">{list?.title}</h1>
-                                <p className="text-sm sm:text-base font-light mb-4 text-wrap">{list?.description}</p>
+                                <p className="text-base sm:text-xl font-light mb-4 text-wrap">{list?.description}</p>
                                 <h1 className="font-semibold text-2xl sm:text-3xl lg:4-xl mb-4">${(list?.title !== "Plus" ? plusMultiplier : proMultiplier) * (isMonthly ? list?.priceMonthly : list?.priceYearly)}/month*</h1>
 
                                 <br />
@@ -85,7 +85,7 @@ function PricingCards({ isMonthly, isExpanded, isHomePage = false }) {
                                 <div className="flex items-center justify-center">
 
                                     <button className="zoomEffect text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer"
-                                        onClick={() => Navigate('/book_demo')}
+                                        onClick={() => Navigate('/contact')}
                                         style={{
                                             backgroundImage: list?.title === "Pro" ?
                                                 'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' :
@@ -103,7 +103,7 @@ function PricingCards({ isMonthly, isExpanded, isHomePage = false }) {
                                 <p> &#x2713;  <span className='ms-3'>{list?.iStock} Photos by iStock</span></p>
                                 <p>&#x2713;  <span className='ms-3'>Unlimited Projects</span></p>
                                 <p>&#x2713;  <span className='ms-3'>Watermark {list?.watermark}</span></p>
-                                <p>&#x2713;  <span className='ms-3'>Unlock {list?.backgrounds} Background</span></p>
+                                <p>&#x2713;  <span className='ms-3'>Unlock {list?.backgrounds} Backgrounds</span></p>
 
                             </div>}
                         </div>
