@@ -37,19 +37,19 @@ const Home = () => {
             </div>
 
             <div className="mt-10 lg:mt-4 2xl:mt-6 xl:mt-5 leading-normal">
-              <p className="hidden md:block text-white text-center  2xl:text-3xl mx-auto lg:text-lg xl:text-xl">
+              <h2 className="hidden md:block text-white text-center  2xl:text-3xl mx-auto lg:text-lg xl:text-xl">
                 Acquire the tools necessary for designing ads, banners, websites
                 and more, all with the
-              </p>
-              <p className="hidden md:block text-white text-center 2xl:text-3xl xl:text-xl mx-auto">
+              </h2>
+              <h2 className="hidden md:block text-white text-center 2xl:text-3xl xl:text-xl mx-auto">
                 click of a button.
-              </p>
+              </h2>
 
-              <p className="md:hidden text-white text-center  2xl:text-3xl mx-4 lg:text-lg xl:text-xl">
+              <h2 className="md:hidden text-white text-center  2xl:text-3xl mx-4 lg:text-lg xl:text-xl">
                 Acquire the tools necessary for designing ads, banners, websites
                 and more, all with the click of button which saves
                 cost, increases efficiency and accuracy at minimal cost.
-              </p>
+              </h2>
               {/* <p className="md:hidden text-white text-center 2xl:text-3xl xl:text-xl mx-auto">click of a button</p> */}
 
               <ul className="hidden md:flex list-disc text-white  lg:gap-10 gap-5 justify-center items-center mt-5 lg:mt-3 xl:mt-4 2xl:mt-5 text-xs lg:text-sm xl:text-lg 2xl:text-2xl mx-auto">
@@ -60,7 +60,7 @@ const Home = () => {
               </ul>
             </div>
 
-           <Link to='/contact'>
+           <Link to='/book_demo'>
            <div
               className="sec-one-button zoomEffect text-black rounded-full px-8 py-1 mt-16 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
               style={{
@@ -191,11 +191,11 @@ const Home = () => {
             />
           </div>
           <div className="lg:w-1/2 sm:w-full xl:w-1/2 text-center  md:pr-4 flex flex-col justify-center items-center">
-            <h4 className="font-medium text-lg md:text-xl px-2 md:px-4 leading-tight">
+            <h2 className="font-medium text-lg md:text-xl px-2 md:px-4 leading-tight">
               Share your ideas and get inspired. Connect with like-minded
               creators and discuss your ideas on our{" "}
               <span className="font-bold">Discord server</span>
-            </h4>
+            </h2>
             <Link to={"https://discord.gg/vf2jJxEVn7"}>
               {" "}
               <div className="mt-7 bg-black w-[11rem] md:w-[13rem] text-white md:py-3 px-4 py-2 md:px-2 rounded-full text-xl md:text-2xl font-semibold zoomEffect">
@@ -231,7 +231,7 @@ const Home = () => {
                   </p>
                   <h1 className="font-semibold text-2xl mb-4">$0/month*</h1>
                   <div className="flex items-center justify-center">
-                    <Link to='/contact'>
+                    <Link to='/book_demo'>
                     <button className=" text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5" style={{background:'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'}}>
                       Try for free
                     </button>
@@ -257,7 +257,7 @@ const Home = () => {
                   </p>
                   <h1 className="font-semibold text-2xl mb-4">$20/month*</h1>
                   <div className="flex items-center justify-center">
-                    <Link to='/contact'>
+                    <Link to='/book_demo'>
                     <button className="text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5" style={{background:'linear-gradient(180deg, #FFFFFF 60.19%, #000000 325.69%)'}}>
                       Get Plus
                     </button>
@@ -283,7 +283,7 @@ const Home = () => {
                   </p>
                   <h1 className="font-semibold text-2xl mb-4">$50/month*</h1>
                   <div className="flex items-center justify-center">
-                    <Link to='/contact'>
+                    <Link to='/book_demo'>
                     <button className=" text-black justify-center px-6 py-1 font-semibold rounded-2xl mb-5" style={{background:'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)'}}>
                       Be a Pro
                     </button>
@@ -317,6 +317,10 @@ const Home = () => {
           </Link>
           
         </div>
+      </div>
+
+      <div className="container-fluid mx-8 lg:mx-16 2xl:mx-24">
+        <img src="/images/mobileApp.webp" alt="Krut Mobile" />
       </div>
 
       <GetStarted />

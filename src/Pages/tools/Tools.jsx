@@ -36,7 +36,7 @@ const Tools = () => {
       </ToolSlider>
 
       <div className="text-center lg:pt-10 flex flex-col justify-center items-center">
-        <Link to='/contact'>
+        <Link to='/book_demo'>
           <div
             className="sec-one-button  text-black rounded-full px-8 py-1 text-lg  lg:px-20 lg:py-2 lg:mt-8 2xl:mt-14 2xl:py-4 2xl:px-28 lg:text-2xl 2xl:text-4xl font-bold"
             style={{

@@ -22,14 +22,14 @@ function Footer() {
         if (!email || !emailCheck) {
             return toast.error("Please enter a valid email address");
         }
-            toast.promise(
-                subscribeAPI({ email }),
-                {
-                    loading: 'Subscribing...',
-                    success: <b>Subscribed successfully!</b>,
-                    error: <b>Subscription failed. Please try again later.</b>,
-                }
-            );
+        toast.promise(
+            subscribeAPI({ email }),
+            {
+                loading: 'Subscribing...',
+                success: <b>Subscribed successfully!</b>,
+                error: <b>Subscription failed. Please try again later.</b>,
+            }
+        );
     }
 
     return (
@@ -55,7 +55,7 @@ function Footer() {
                                 </button>
                             </div>
 
-                            <img src={logo} alt="Krut logo" className='w-[180px] sm:w-[250px] ' />
+                            <img src={logo} onClick={() => Navigate('/')} alt="Krut logo" className='w-[180px] sm:w-[250px] cursor-pointer' />
 
                         </div>
 
@@ -66,10 +66,11 @@ function Footer() {
                                 <ul className='text-sm sm:text-lg font-thin'>
                                     <li className='cursor-pointer'> <a href="https://discord.gg/vf2jJxEVn7" target='_blank'>Community</a></li>
                                     <li className='cursor-pointer' onClick={() => Navigate('/blogs')}>Blogs</li>
-                                    <li className='cursor-pointer' onClick={() => toast('Page coming soon', {icon: '🔜',})}>Tutorials</li>
+
+                                    <li className='cursor-pointer'> <a href="https://krut-ai.notion.site/Krut-AI-MVP-User-Manual-b2d5df9733cd411e99b4e92a68c7c154" target='_blank'>Tutorials</a></li>
                                     <li className='cursor-pointer' onClick={() => Navigate('/pricing')}>Pricing</li>
                                     <li className='cursor-pointer' onClick={() => Navigate('/contact')}>Contact Us</li>
-                                    <li>Legal</li>
+                                    {/* <li>Legal</li> */}
                                     {/* <li className='hidden lg:block'>Pricing</li>
                                     <li className='hidden lg:block'>Contact Us</li>
                                     <li className='hidden lg:block'>Legal</li> */}
@@ -129,9 +130,11 @@ function Footer() {
                     </div>
 
                     <div className="text-center text-white mt-8 my-3">
-                        <p>Privacy Policy | Terms & Conditions</p>
+                        <p>
+                            <span className='cursor-pointer' onClick={() => Navigate('/privacy_policy')}>Privacy Policy</span> |
+                            <span className='cursor-pointer' onClick={() => Navigate('/terms_and_conditions')}> Terms & Conditions</span>
+                        </p>
                         <p>@2024 Krut AI</p>
-
                     </div>
                 </div>
 

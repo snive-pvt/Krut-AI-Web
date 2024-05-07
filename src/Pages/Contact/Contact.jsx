@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from "../../Components/Header/Header";
-import ContactUs from "../../assets/Images/contactus.png";
+import ContactUs from "../../assets/Images/contactus.webp";
 import './contact.css';
 import Footer from '../../Components/Footer/Footer';
 import Faq from '../../Components/faq/Faq';
@@ -125,6 +125,7 @@ const Contact = () => {
                       <option value="Twitter">Twitter</option>
                       <option value="Instagram">Instagram</option>
                       <option value="Facebook">Facebook</option>
+                      <option value="Youtube">Youtube</option>
                       <option value="Others">Others</option>
                     </select>
                   </div>
@@ -139,7 +140,7 @@ const Contact = () => {
               </div>
               <div>
                 <button type='submit' className='mx-2 bg-black rounded-full text-white text-center w-[88%] py-3 2xl:py-4 text-lg 2xl:text-2xl font-medium'>
-                  Be Part of the Future
+                  Be a Part of the Future
                 </button>
               </div>
             </div>

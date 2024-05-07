@@ -85,7 +85,7 @@ function PricingCards({ isMonthly, isExpanded }) {
                                 <div className="flex items-center justify-center">
 
                                     <button className="zoomEffect text-black text-xl sm:text-2xl xl:text-3xl justify-center px-6 py-3 w-[75%] font-bold rounded-[1.5rem] mt-7 cursor-pointer" 
-                                    onClick={()=>Navigate('/contact')}
+                                    onClick={()=>Navigate('/book_demo')}
                                     style={{
                                         backgroundImage: list?.title === "Pro" ?
                                             'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' :
