@@ -28,6 +28,7 @@ function App() {
         <Route path="/addblog" element={<AddBlog />} />
         <Route path="/mobiletools" element={<ToolsMobile />} />
         <Route path="/tools" element={<Tools/>}/>
+        <Route path="*" element={<Home/>}/>
       </Routes>
     </>
   );
