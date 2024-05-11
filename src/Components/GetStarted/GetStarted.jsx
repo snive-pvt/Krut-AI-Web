@@ -11,7 +11,7 @@ const GetStarted = () => {
         <h1 className="text-center font-bold text-3xl lg:text-6xl ">Krut's Actions</h1>
 
         {/* Use Link to navigate to another page */}
-        <Link to="/book_demo" className="zoomEffect bg-black lg:text-xl py-4 w-3/5 lg:w-1/4 rounded-full lg:my-6 my-4 font-medium flex justify-center items-center text-xs gap-4 " style={{color:'#6AD9DF'}}> 
+        <Link to="/bookademo" className="zoomEffect bg-black lg:text-xl py-4 w-3/5 lg:w-1/4 rounded-full lg:my-6 my-4 font-medium flex justify-center items-center text-xs gap-4 " style={{color:'#6AD9DF'}}> 
           <BsArrowRightCircle className="text-xl lg:text-2xl"/>
           Get Started for free
         </Link>

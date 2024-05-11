@@ -75,7 +75,7 @@ const Blog = () => {
                                 <div className='text-white text-xs lg:text-sm 2xl:text-xl md:mt-2 lg:mt-4 2xl:mt-5 text-center'>
                                     <h1 className='text-xs md:text-[10px] lg:text-sm'>Get Started For Free</h1>
                                     <button className='rounded-full py-1.5 px-4 mt-2 2xl:mt-3 md:text-xs lg:text-sm text-black font-semibold' style={{ background: 'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' }}
-                                        onClick={() => Navigate("/book_demo")}>
+                                        onClick={() => Navigate("/bookademo")}>
                                         Try Krut AI (Beta)
                                     </button>
                                 </div>

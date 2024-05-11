@@ -59,38 +59,21 @@ const BookADemo = () => {
 
         if (!isAgreed) return toast.error("Please read and accept the privacy policy to continue");
 
-        // console.log( {
-        //     firstName: formData.firstName,
-        //     lastName: formData.lastName,
-        //     email: formData.email,
-        //     phoneNumber: CountryCodes[formData.countryCodeIndex].code+formData.phoneNumber,
-        //     profession: formData.profession === "Others" ? otherProfession : formData.profession,
-        //     referredBy: formData.referredBy === "Others" ? reference : formData.referredBy,
-        // })
-        // return
+        toast.loading('Sending Demo Request...'); // Display loading indicator
 
-        try {
-            toast.promise(
-                bookDemoAPI(
-                    {
-                        firstName: formData.firstName,
-                        lastName: formData.lastName,
-                        email: formData.email,
-                        phoneNumber: CountryCodes[formData.countryCodeIndex].code+formData.phoneNumber,
-                        profession: formData.profession === "Others" ? otherProfession : formData.profession,
-                        referredBy: formData.referredBy === "Others" ? reference : formData.referredBy,
-                    }
-                ),
-                {
-                    loading: 'Submitting details...',
-                    success: <b>message sent successfully!</b>,
-                    error: <b>Unable to send message. Please try again later.</b>,
-                }
-            );
-        } catch (error) {
-            console.error("Error sending message:", error);
-            toast.error(error?.message);
-            return
+        const response = await bookDemoAPI(
+            {
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                phoneNumber: CountryCodes[formData.countryCodeIndex].code + formData.phoneNumber,
+                profession: formData.profession === "Others" ? otherProfession : formData.profession,
+                referredBy: formData.referredBy === "Others" ? reference : formData.referredBy,
+            }
+        )
+        if (response) {
+            toast.dismiss(); // Dismiss loading indicator
+            toast.success(response?.message)
         }
     };
 
@@ -214,7 +197,7 @@ const BookADemo = () => {
                             </button>
                         </div>
                     </div>
-                    
+
                 </div>
             </form>
 

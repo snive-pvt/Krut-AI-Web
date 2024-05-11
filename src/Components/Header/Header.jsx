@@ -204,7 +204,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <Link to="/book_demo"
+          <Link to="/bookademo"
             className="hidden md:block  rounded-full text-black font-bold md:text-lg lg:text-xl 2xl:text-2xl md:px-5 md:py-1 lg:px-7 lg:py-2 2xl:px-9 2xl:py-4"
             style={{
               background:

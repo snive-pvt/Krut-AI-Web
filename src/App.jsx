@@ -22,7 +22,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/book_demo" element={<BookADemo />} />
+        <Route path="/bookademo" element={<BookADemo />} />
         <Route path="/terms_and_conditions" element={<TermsAndConditions />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/addblog" element={<AddBlog />} />
