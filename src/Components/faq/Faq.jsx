@@ -83,7 +83,7 @@ const Faq = ({ faqs }) => {
         </div>
       </div>
       <div className="text-white">
-        <p>Cant find what your're looking for?
+        <p>Can't find what your're looking for?
           <span onClick={()=> Navigate("/contact")} className="text-krutNeon font-bold cursor-pointer"> Contact our Support</span>
         </p>
       </div>

@@ -38,3 +38,19 @@ export const contactAPI = async (data) => {
         throw Error(error.message);
     }
 };
+
+// ============ Book Demo API ================
+export const bookDemoAPI = async (data) => {
+    try {
+        const url = API_END_POINT + supportEndPoint?.bookADemo?.url;
+        const response = await axios.post(url, data);
+        if (response?.data) {
+            return response.data;
+        } else {
+            throw new Error("Unable to get response");
+        }
+    } catch (error) {
+        console.log(error.message);
+        throw Error(error.message);
+    }
+};

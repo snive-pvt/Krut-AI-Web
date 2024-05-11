@@ -57,7 +57,7 @@ const cardData = [
   },
   {
     title: "Magic Remove",
-    description: "Eliminate unwanted objects and fix imperfections instanly and accurately",
+    description: "Eliminate unwanted objects and fix imperfections instantly and accurately",
     gif: MagicRemove,
     thumbnail: MagivRemovetn,
     video: MagicRemove,
@@ -67,7 +67,7 @@ const cardData = [
   },
   {
     title: "Magic Replace",
-    description: "Swap unwnated objects effortlessly with pixels perfect clarity",
+    description: "Swap unwanted objects effortlessly with pixels perfect clarity",
     gif: MagicReplace,
     thumbnail: MagicReplacetn,
     video: MagicReplace,

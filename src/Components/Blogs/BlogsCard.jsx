@@ -17,11 +17,11 @@ const BlogsCard = ({ blog }) => {
 
         <div className="absolute bottom-0 left-0 p-3 w-full h-[8rem] lg:h-[10rem] 2xl:h-[12rem]  bg-white  rounded-b-3xl">
 
-          <h6 className="font-extrabold xl:text-2xl 2xl:text-3xl">
+          <h3 className="font-extrabold xl:text-2xl 2xl:text-3xl">
             <a href={`/blog?id=${blog?.id}`}>
               <span className='cursor-pointer'>{blog?.title}</span>
             </a>
-          </h6>
+          </h3>
 
           <p className="font-semibold  text-sm 2xl:text-xl my-2 2xl:mt-8">
             <a href={`/blog?id=${blog?.id}`}>

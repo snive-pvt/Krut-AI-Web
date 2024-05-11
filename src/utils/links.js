@@ -1,4 +1,5 @@
-export const API_END_POINT = "https://api.krut.ai/";
+// export const API_END_POINT = "http://localhost:3000/";
+export const API_END_POINT = "https://contact.krut.ai/";
 
 export const supportEndPoint = {
     subscribe: {
@@ -7,6 +8,10 @@ export const supportEndPoint = {
     },
     contact: {
         url: 'api/v1/web/contact',
+        method: 'POST',
+    },
+    bookADemo: {
+        url: 'api/v1/web/book-a-demo',
         method: 'POST',
     },
 };

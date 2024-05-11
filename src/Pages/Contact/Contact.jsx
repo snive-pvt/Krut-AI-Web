@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from "../../Components/Header/Header";
-import ContactUs from "../../assets/Images/contactus.png";
+import ContactUs from "../../assets/Images/contactus.webp";
 import './contact.css';
 import Footer from '../../Components/Footer/Footer';
 import Faq from '../../Components/faq/Faq';
@@ -120,11 +120,13 @@ const Contact = () => {
                   <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
                     <label htmlFor="referredBy" className='text-xs 2xl:text-sm font-medium'>How did you hear about us?</label>
                     <select id='referredBy' name='referredBy' value={formData.referredBy} aria-valuenow={formData.referredBy} onChange={handleInputChange} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Facebook, instagram, twitter'>
+                      <option value="">Select</option>
                       <option value="LinkedIn">LinkedIn</option>
                       <option value="Discord">Discord</option>
                       <option value="Twitter">Twitter</option>
                       <option value="Instagram">Instagram</option>
                       <option value="Facebook">Facebook</option>
+                      <option value="Youtube">Youtube</option>
                       <option value="Others">Others</option>
                     </select>
                   </div>
@@ -132,14 +134,14 @@ const Contact = () => {
                   {formData.referredBy === "Others" &&
                     <div className='mb-2 2xl:mb-5 2xl:h-16 flex flex-col w-[92%]'>
                       <label htmlFor="reference2" className='text-xs 2xl:text-sm font-medium'>Others, Please Specify</label>
-                      <input id='reference2' name='reference2' value={reference} onChange={(e) => setReference(e.target.value)} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Referred by' />
+                      <input id='reference2' name='reference2' value={reference} onChange={(e) => setReference(e.target.value)} className='px-2 2xl:placeholder:text-sm border border-gray-400 rounded h-9 2xl:h-16' type="text" placeholder='Referred By' />
                     </div>
                   }
                 </div>
               </div>
               <div>
                 <button type='submit' className='mx-2 bg-black rounded-full text-white text-center w-[88%] py-3 2xl:py-4 text-lg 2xl:text-2xl font-medium'>
-                  Be Part of the Future
+                  Be a Part of the Future
                 </button>
               </div>
             </div>

@@ -3,7 +3,7 @@ import Header from '../../Components/Header/Header'
 import { IoMdShareAlt } from "react-icons/io";
 import { BlogsData } from '../../Data/BlogsData';
 import Footer from '../../Components/Footer/Footer';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import "./blog.css"
 
 
@@ -11,6 +11,7 @@ const Blog = () => {
     const [blogData, setBlogData] = useState(BlogsData[BlogsData?.length - 1]);
     const [currentURL, setCurrentURL] = useState(window.location.href);
     const location = useLocation();
+    const Navigate = useNavigate();
 
     useEffect(() => {
         // console.log(currentURL)
@@ -54,8 +55,8 @@ const Blog = () => {
                                     <div>
                                         <div className="flex justify-center items-center mt-2">
                                             <div className="flex xl:space-x-6  md:space-x-2">
-                                                <a href="https://discord.com" target="_blank">
-                                                    <img className='md:h-2 lg:h-4' src="/icons/discord.png" alt="discord" />
+                                                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentURL)}`} target="_blank">
+                                                    <img className='md:h-2 lg:h-4' src="/icons/facebook.png" alt="facebook" />
                                                 </a>
                                                 <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}&title=${blogData.title}&summary=${blogData.titleIntro}`} target="_blank">
                                                     <img className='md:h-2 lg:h-4' src="/icons/linkedIn.png" alt="linkedIn" />
@@ -73,7 +74,10 @@ const Blog = () => {
                                 </div>
                                 <div className='text-white text-xs lg:text-sm 2xl:text-xl md:mt-2 lg:mt-4 2xl:mt-5 text-center'>
                                     <h1 className='text-xs md:text-[10px] lg:text-sm'>Get Started For Free</h1>
-                                    <button className='rounded-full px-4 mt-2 2xl:mt-3 md:text-xs lg:text-sm text-black font-semibold' style={{ background: 'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' }} >Try Krut AI (Beta)</button>
+                                    <button className='rounded-full py-1.5 px-4 mt-2 2xl:mt-3 md:text-xs lg:text-sm text-black font-semibold' style={{ background: 'linear-gradient(180deg, #FFFFFF -225.69%, #01DDE9 35.95%, #37003E 141.48%)' }}
+                                        onClick={() => Navigate("/bookademo")}>
+                                        Try Krut AI (Beta)
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -133,8 +137,8 @@ const Blog = () => {
                         <div className="flex justify-center items-center ">
                             <div className="flex justify-center items-center space-x-4">
                                 <IoMdShareAlt className='text-krutNeon text-3xl' />
-                                <a href="https://discord.com" target="_blank">
-                                    <img className='h-6' src="/icons/discord.png" alt="discord" />
+                                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentURL)}`} target="_blank">
+                                    <img className='h-6' src="/icons/facebook.png" alt="facebook" />
                                 </a>
                                 <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentURL}&title=${blogData.title}&summary=${blogData.titleIntro}`} target="_blank">
                                     <img className='h-6' src="/icons/linkedIn.png" alt="linkedIn" />

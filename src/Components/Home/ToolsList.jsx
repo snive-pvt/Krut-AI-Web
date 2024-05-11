@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 function ToolsList() {
-    const [activeTool, setActiveTool] = useState(cardData[0].title);
+    const [activeTool, setActiveTool] = useState("");
     const location = useLocation();
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function ToolsList() {
 
 
     return (
-        <div
+        <div id='ToolsList'
             className="min-h-[80rem] xl:min-h-[95rem] bg-cover bg-center"
             style={{ backgroundImage: `url(${bgVector})` }} >
             <div className="min-h-[80rem xl:min-h-[95rem] bg-black bg-opacity-80">
