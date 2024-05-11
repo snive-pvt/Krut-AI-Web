@@ -73,7 +73,19 @@ const Contact = () => {
           success: <b>message sent successfully!</b>,
           error: <b>Unable to send message. Please try again later.</b>,
         }
-      );
+      ).then(() => {
+        // Reset form
+        setTimeout(() => {
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+            message: '',
+            referredBy: '',
+          })
+        }, 2000);
+      });
     } catch (error) {
       console.error("Error sending message:", error);
       toast.error(error?.message);

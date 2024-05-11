@@ -73,7 +73,19 @@ const BookADemo = () => {
         )
         if (response) {
             toast.dismiss(); // Dismiss loading indicator
-            toast.success(response?.message)
+            toast.success(response?.message);
+            // Reset form
+            setTimeout(() => {
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    countryCodeIndex: '102', //India index in json
+                    phoneNumber: '',
+                    profession: '',
+                    referredBy: '',
+                })
+            }, 2000);
         }
     };
 

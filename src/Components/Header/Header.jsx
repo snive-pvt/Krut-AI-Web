@@ -128,6 +128,9 @@ const Header = () => {
                 <Link to="/pricing" className="text-white text-2xl font-semibold" >
                   Pricing
                 </Link>
+                <Link to="/bookademo" className="text-white text-2xl font-semibold" >
+                  Book A Demo
+                </Link>
               </div>
             </div>
           )}

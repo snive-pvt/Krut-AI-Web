@@ -29,7 +29,11 @@ function Footer() {
                 success: <b>Subscribed successfully!</b>,
                 error: <b>Subscription failed. Please try again later.</b>,
             }
-        );
+        ).then(() => {
+            setTimeout(() => {
+                setEmail("");
+            }, 2000);
+        })
     }
 
     return (
@@ -43,6 +47,7 @@ function Footer() {
                             <h2 className='text-3xl sm:text-5xl font-bold'>Receive <span className='text-krutNeon'>messages</span> from the future</h2>
                             <div className="flex">
                                 <input className='w-[70%] bg-transparent border border-white rounded px-3 py-0.5' type="email" placeholder='Email'
+                                    value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <button className='ms-5 sm:ms-10 border border-white w-8 h-8 rounded-full flex justify-center items-center 
