@@ -111,7 +111,7 @@ const Header = () => {
                         <CgFileDocument style={{ marginTop: '3px' }} /> Blog
                       </Link>
 
-                      <a href="https://krut-ai.notion.site/Krut-AI-MVP-User-Manual-b2d5df9733cd411e99b4e92a68c7c154"
+                      <a href="https://krut-ai.notion.site/Krut-AI-Beta-User-Manual-b2d5df9733cd411e99b4e92a68c7c154"
                         target="_blank" className=" px-4 py-2 pb-4  text-white text-2xl flex gap-2" >
                         <MdCastForEducation style={{ marginTop: '3px' }} /> Tutorials
                       </a>
@@ -167,7 +167,7 @@ const Header = () => {
                   </div>
                 </Link>
 
-                <a href="https://krut-ai.notion.site/Krut-AI-MVP-User-Manual-b2d5df9733cd411e99b4e92a68c7c154" target="_blank" className="block px-4 py-2 text-white ">
+                <a href="https://krut-ai.notion.site/Krut-AI-Beta-User-Manual-b2d5df9733cd411e99b4e92a68c7c154" target="_blank" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
                     <div className="text-4xl">
                       <MdCastForEducation />

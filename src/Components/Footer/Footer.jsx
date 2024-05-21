@@ -116,31 +116,40 @@ function Footer() {
                 </div>
 
                 {/* social links */}
-                <div className="py-5 w-full px-3 ">
+                <div className="py-5 w-full">
+
                     <div className="flex justify-center items-center">
-                        <div className="flex space-x-8 md:space-x-5">
-                            <a href="https://discord.gg/vf2jJxEVn7" target="_blank">
+                        <div className="flex flex-wrap justify-center space-x-3 md:space-x-5">
+                            <a href="mailto:harsh@snive.io" target="_blank" className='p-1 md:p-0'>
+                                <img className='h-8 zoomEffect' src="/icons/mail.png" alt="Krut Mail" />
+                            </a>
+                            <a href="https://discord.gg/vf2jJxEVn7" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/discord.png" alt="Krut Discord" />
                             </a>
-                            <a href="https://www.linkedin.com/company/krut-ai/?viewAsMember=true" target="_blank">
+                            <a href="https://www.linkedin.com/company/krut-ai/?viewAsMember=true" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/linkedIn.png" alt="Krut LinkedIn" />
                             </a>
-                            <a href="https://www.instagram.com/_krut.ai/" target="_blank">
+                            <a href="https://www.instagram.com/_krut.ai/" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/instagram.png" alt="Krut Instagram" />
                             </a>
-                            <a href="https://twitter.com/krutAI_" target="_blank">
+                            <a href="https://twitter.com/krutAI_" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/x.png" alt="Krut X" />
                             </a>
-                            <a href="https://www.facebook.com/people/Krut-AI/61559205755709/" target="_blank">
+                            <a href="https://www.facebook.com/people/Krut-AI/61559205755709/" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/facebook.png" alt="Krut Facebook" />
                             </a>
-                            <a href="https://www.youtube.com/channel/UCTUjDWEOkvDnLHrqX9VKnKw" target="_blank">
+                            <a href="https://www.youtube.com/channel/UCTUjDWEOkvDnLHrqX9VKnKw" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/youtube.png" alt="Krut Youtube" />
                             </a>
                         </div>
                     </div>
 
-                    <div className="text-center text-white mt-8 my-3">
+                    <div className="text-gray-400 mt-8 my-3 items-center justify-center flex">
+                            <a target='_blank' href='https://maps.app.goo.gl/XDJLmysK7m5XbcEy5' class="material-symbols-outlined"> distance </a>
+                            <span className='px-1'> 2461, 14th A Cross Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102 </span>
+                    </div>
+
+                    <div className="text-center text-gray-400 my-3">
                         <p>
                             <span className='cursor-pointer' onClick={() => Navigate('/privacy_policy')}>Privacy Policy</span> |
                             <span className='cursor-pointer' onClick={() => Navigate('/terms_and_conditions')}> Terms & Conditions</span>
@@ -148,7 +157,6 @@ function Footer() {
                         <p>@2024 Krut AI</p>
                     </div>
                 </div>
-
             </div>
 
         </>
