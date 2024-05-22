@@ -120,7 +120,7 @@ function Footer() {
 
                     <div className="flex justify-center items-center">
                         <div className="flex flex-wrap justify-center space-x-3 md:space-x-5">
-                            <a href="mailto:harsh@snive.io" target="_blank" className='p-1 md:p-0'>
+                            <a href="mailto:contact@krut.ai" target="_blank" className='p-1 md:p-0'>
                                 <img className='h-8 zoomEffect' src="/icons/mail.png" alt="Krut Mail" />
                             </a>
                             <a href="https://discord.gg/vf2jJxEVn7" target="_blank" className='p-1 md:p-0'>
