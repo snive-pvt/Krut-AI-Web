@@ -69,7 +69,7 @@ function Footer() {
                             <div className='px-3 sm:px-6'>
                                 <h3 className="text-lg sm:text-xl font-semibold  mt-4 mb-2">Company</h3>
                                 <ul className='text-sm sm:text-lg font-thin'>
-                                    <li className='cursor-pointer'> <a href="https://discord.gg/vf2jJxEVn7" target='_blank'>Community</a></li>
+                                    {/* <li className='cursor-pointer'> <a href="https://discord.gg/vf2jJxEVn7" target='_blank'>Community</a></li> */}
                                     <li className='cursor-pointer' onClick={() => Navigate('/blogs')}>Blogs</li>
 
                                     <li className='cursor-pointer'> <a href="https://krut-ai.notion.site/Krut-AI-MVP-User-Manual-b2d5df9733cd411e99b4e92a68c7c154" target='_blank'>Tutorials</a></li>
