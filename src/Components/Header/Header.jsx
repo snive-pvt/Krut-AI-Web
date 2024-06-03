@@ -111,7 +111,7 @@ const Header = () => {
                         <CgFileDocument style={{ marginTop: '3px' }} /> Blog
                       </Link>
 
-                      <a href="https://krut-ai.notion.site/Krut-AI-MVP-User-Manual-b2d5df9733cd411e99b4e92a68c7c154"
+                      <a href="https://krut-ai.notion.site/Krut-AI-Beta-User-Manual-b2d5df9733cd411e99b4e92a68c7c154"
                         target="_blank" className=" px-4 py-2 pb-4  text-white text-2xl flex gap-2" >
                         <MdCastForEducation style={{ marginTop: '3px' }} /> Tutorials
                       </a>
@@ -122,11 +122,14 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-                <Link to="https://discord.gg/vf2jJxEVn7" className="text-white text-2xl font-semibold" >
+                {/* <Link to="https://discord.gg/vf2jJxEVn7" className="text-white text-2xl font-semibold" >
                   Community
-                </Link>
+                </Link> */}
                 <Link to="/pricing" className="text-white text-2xl font-semibold" >
                   Pricing
+                </Link>
+                <Link to="/bookademo" className="text-white text-2xl font-semibold" >
+                  Book A Demo
                 </Link>
               </div>
             </div>
@@ -164,7 +167,7 @@ const Header = () => {
                   </div>
                 </Link>
 
-                <a href="https://krut-ai.notion.site/Krut-AI-MVP-User-Manual-b2d5df9733cd411e99b4e92a68c7c154" target="_blank" className="block px-4 py-2 text-white ">
+                <a href="https://krut-ai.notion.site/Krut-AI-Beta-User-Manual-b2d5df9733cd411e99b4e92a68c7c154" target="_blank" className="block px-4 py-2 text-white ">
                   <div className="flex  hover:bg-white hover:text-black hover:rounded-xl">
                     <div className="text-4xl">
                       <MdCastForEducation />
@@ -195,9 +198,9 @@ const Header = () => {
               </div>}
             </div>
 
-            <div className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl" >
+            {/* <div className="text-white  md:text-sm  lg:text-xl 2xl:text-2xl" >
               <a href="https://discord.gg/vf2jJxEVn7" target='_blank'>Community</a>
-            </div>
+            </div> */}
 
             <Link to="/pricing" className="text-white  md:text-sm lg:text-xl 2xl:text-2xl" >
               <span>Pricing</span>
