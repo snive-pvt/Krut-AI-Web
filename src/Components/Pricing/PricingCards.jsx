@@ -32,7 +32,7 @@ function PricingCards({ isMonthly, isExpanded, isHomePage = false }) {
                                     {list?.title}{list?.title === "Free" ? <span className='text-sm sm:text-lg font-normal'> (100 credits)</span> : ""}
                                 </h1>
                                 <p className="text-base sm:text-xl font-light mb-4 text-wrap">{list?.description}</p>
-                                <h1 className="font-semibold text-2xl sm:text-3xl lg:4-xl mb-4">${(list?.title === "Plus" ? plusMultiplier : proMultiplier) * (isMonthly ? list?.priceMonthly : list?.priceYearly)}/month*</h1>
+                                <h1 className="font-semibold text-2xl sm:text-3xl lg:4-xl mb-4">₹{(list?.title === "Plus" ? plusMultiplier : proMultiplier) * (isMonthly ? list?.priceMonthly : list?.priceYearly)}/month*</h1>
                                 <br />
 
                                 {!isHomePage && <div className={`${list?.title === "Free" ? "hidden xl:block" : ""} h-16 mb-3`}>
